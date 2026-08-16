@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Abdul Muqtadir | Avionics & Embedded Systems Engineer</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Portfolio & Technical Resume of Abdul Muqtadir - Avionics Engineering undergraduate at NUST (3.67 CGPA). Specialist in Embedded Systems, Closed-Loop PID Control, DSP, and Autonomous Robotics.">
+  <meta name="keywords" content="Abdul Muqtadir, Avionics Engineer, NUST, Embedded Systems, PID Control, Arduino, ESP32, Robotics, GRBL CNC, DSP, Pakistan Engineer">
+  <meta name="author" content="Abdul Muqtadir">
+  <meta name="theme-color" content="#060911">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abdul Muqtadir | Avionics & Embedded Systems Engineer">
+  <meta property="og:description" content="Explore hardware builds, interactive PID control simulations, and technical capabilities of an Avionics Engineer at NUST.">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheets & Fonts -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Background Ambient Glow & Starfield -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <canvas id="starCanvas"></canvas>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#sec-hero" class="nav-brand">
+        <div class="brand-badge">AM</div>
+        <div class="brand-info">
+          <span class="brand-name">Abdul Muqtadir</span>
+          <span class="brand-sub">AVIONICS // NUST</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#sec-skills" class="nav-link">Arsenal</a></li>
+        <li><a href="#sec-simulator" class="nav-link">PID Lab</a></li>
+        <li><a href="#sec-projects" class="nav-link">Projects</a></li>
+        <li><a href="#sec-journey" class="nav-link">Journey</a></li>
+        <li><a href="#sec-terminal" class="nav-link">Terminal</a></li>
+        <li><a href="#sec-contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Action Items -->
+      <div class="nav-actions">
+        <!-- Audio SFX Toggle -->
+        <button class="btn-icon" id="btnSoundToggle" title="Enable/Mute Sound FX" aria-label="Toggle sound effects">
+          <i class="fas fa-volume-mute"></i>
+        </button>
+        <!-- Print / ATS CV Download Button -->
+        <button class="btn-secondary print-cv-btn" title="Download ATS Resume / Print PDF">
+          <i class="fas fa-file-pdf"></i>
+          <span>Print CV</span>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <nav class="mobile-nav-drawer" id="mobileNavDrawer">
+    <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+    <ul class="mobile-drawer-links">
+      <li><a href="#sec-hero">Home</a></li>
+      <li><a href="#sec-skills">Technical Arsenal</a></li>
+      <li><a href="#sec-simulator">PID Control Lab</a></li>
+      <li><a href="#sec-projects">Hardware Projects</a></li>
+      <li><a href="#sec-journey">Experience &amp; Education</a></li>
+      <li><a href="#sec-terminal">Avionics Terminal</a></li>
+      <li><a href="#sec-contact">Contact &amp; Transmit</a></li>
+    </ul>
+    <div style="margin-top:auto; display:flex; flex-direction:column; gap:0.75rem;">
+      <button class="btn-primary print-cv-btn" style="width:100%; justify-content:center;">
+        <i class="fas fa-file-pdf"></i> Print / Save CV
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section" id="sec-hero">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Left: Intro & Bio -->
+        <div class="hero-content">
+          <div class="hero-status-pill">
+            <span class="status-dot"></span>
+            <span>Available for Engineering Roles &amp; Internships</span>
+          </div>
+
+          <h1 class="hero-title">
+            ABDUL <span class="title-accent">MUQTADIR</span>
+          </h1>
+
+          <div class="hero-subtitle">
+            <i class="fas fa-terminal" style="font-size:0.9rem; color:var(--accent-cyan);"></i>
+            <span id="typingRole">Avionics Engineering Undergrad @ NUST</span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <p class="hero-bio">
+            Undergraduate Avionics Engineer at the <strong>National University of Sciences &amp; Technology (NUST)</strong> with a <strong>3.67 CGPA</strong>. Specialized in hardware-to-firmware embedded design, real-time closed-loop PID control, sensor fusion, and autonomous cyber-physical systems.
+          </p>
+
+          <!-- Contact Micro-Chips -->
+          <div class="hero-chips">
+            <div class="info-chip copy-email-btn" title="Click to copy email">
+              <i class="fas fa-envelope"></i>
+              <span>Muqtadir0711@gmail.com</span>
+            </div>
+            <div class="info-chip copy-phone-btn" title="Click to copy phone number">
+              <i class="fas fa-phone-alt"></i>
+              <span>(+92) 333 454 7518</span>
+            </div>
+            <div class="info-chip">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Gujranwala / Islamabad, Pakistan</span>
+            </div>
+          </div>
+
+          <!-- Hero CTAs -->
+          <div class="hero-buttons">
+            <a href="#sec-projects" class="btn-primary">
+              <i class="fas fa-microchip"></i>
+              <span>View Hardware Builds</span>
+            </a>
+            <a href="#sec-simulator" class="btn-secondary">
+              <i class="fas fa-sliders-h"></i>
+              <span>Launch PID Simulator</span>
+            </a>
+            <button class="btn-secondary" id="downloadVCardBtn" title="Download Contact Card">
+              <i class="fas fa-address-card"></i>
+              <span>vCard</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Avionics Flight HUD Instrument Widget -->
+        <div class="hero-telemetry">
+          <div class="hero-hud-card">
+            <div class="hud-header">
+              <div class="hud-title">AVIONICS TELEMETRY DISPLAY</div>
+              <div class="hud-live-tag"><i class="fas fa-circle-notch fa-spin"></i> LIVE HUD</div>
+            </div>
+
+            <!-- Dynamic Attitude / Artificial Horizon Canvas -->
+            <div class="hud-instrument-wrap">
+              <canvas id="horizonCanvas"></canvas>
+            </div>
+
+            <!-- Live Telemetry Grid -->
+            <div class="hud-telemetry-grid">
+              <div class="telemetry-box">
+                <div class="telemetry-label">PITCH ANGLE</div>
+                <div class="telemetry-val cyan" id="hudPitch">+0.0°</div>
+              </div>
+              <div class="telemetry-box">
+                <div class="telemetry-label">ROLL ANGLE</div>
+                <div class="telemetry-val cyan" id="hudRoll">+0.0°</div>
+              </div>
+              <div class="telemetry-box">
+                <div class="telemetry-label">HEADING (MAG)</div>
+                <div class="telemetry-val amber" id="hudHeading">142°</div>
+              </div>
+              <div class="telemetry-box">
+                <div class="telemetry-label">ACADEMIC CGPA</div>
+                <div class="telemetry-val emerald">3.67 / 4.00</div>
+              </div>
+              <div class="telemetry-box">
+                <div class="telemetry-label">MCU FREQ</div>
+                <div class="telemetry-val">240 MHz</div>
+              </div>
+              <div class="telemetry-box">
+                <div class="telemetry-label">SYS HEALTH</div>
+                <div class="telemetry-val emerald">NOMINAL</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS METRICS STRIP ==================== -->
+  <div class="stats-strip" id="sec-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box reveal">
+          <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="stat-value"><span id="countCgpa">3.67</span><span style="font-size:1.2rem; color:var(--accent-cyan);">/4.0</span></div>
+          <div class="stat-desc">NUST Academic CGPA</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="stat-icon"><i class="fas fa-robot"></i></div>
+          <div class="stat-value"><span id="countProjects">4</span><span>+</span></div>
+          <div class="stat-desc">Custom Hardware Builds</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <div class="stat-value"><span id="countExp">3</span><span>+ Yrs</span></div>
+          <div class="stat-desc">A-Level STEM Tutoring</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="stat-value">Sem <span id="countSem">5</span></div>
+          <div class="stat-desc">Current Standing (2023-27)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TECHNICAL ARSENAL SECTION ==================== -->
+  <section id="sec-skills">
+    <div class="container">
+      <div class="section-meta reveal">
+        <div class="section-tag">Capabilities</div>
+        <h2 class="section-title">Technical Arsenal</h2>
+        <p class="section-desc">Comprehensive toolset spanning embedded firmware, mathematical modeling, control theory, and physical prototyping.</p>
+      </div>
+
+      <div class="skills-container">
+        <!-- Group 1: Programming & Firmware -->
+        <div class="skill-category-card reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+            <h3 class="skill-cat-title">Languages &amp; Code</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-chip"><span>C / C++</span><span class="chip-lvl">Embedded</span></div>
+            <div class="skill-chip"><span>Python</span><span class="chip-lvl">Data/Scripts</span></div>
+            <div class="skill-chip"><span>MATLAB</span><span class="chip-lvl">DSP/Math</span></div>
+            <div class="skill-chip"><span>G-Code</span><span class="chip-lvl">CNC</span></div>
+            <div class="skill-chip"><span>Bash / Linux</span><span class="chip-lvl">CLI</span></div>
+          </div>
+        </div>
+
+        <!-- Group 2: Simulation & Hardware Debug -->
+        <div class="skill-category-card reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-wave-square"></i></div>
+            <h3 class="skill-cat-title">Simulation &amp; Tools</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-chip"><span>Simulink</span><span class="chip-lvl">Dynamic Sys</span></div>
+            <div class="skill-chip"><span>Proteus</span><span class="chip-lvl">Circuit Sim</span></div>
+            <div class="skill-chip"><span>LabVIEW</span><span class="chip-lvl">Telemetry</span></div>
+            <div class="skill-chip"><span>GRBL</span><span class="chip-lvl">Firmware</span></div>
+            <div class="skill-chip"><span>Git / GitHub</span><span class="chip-lvl">VCS</span></div>
+          </div>
+        </div>
+
+        <!-- Group 3: CAD & Mechanical Prototyping -->
+        <div class="skill-category-card reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-drafting-compass"></i></div>
+            <h3 class="skill-cat-title">CAD &amp; Design</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-chip"><span>CATIA V5</span><span class="chip-lvl">3D CAD</span></div>
+            <div class="skill-chip"><span>AutoCAD</span><span class="chip-lvl">Schematics</span></div>
+            <div class="skill-chip"><span>Tinkercad</span><span class="chip-lvl">Rapid Proto</span></div>
+            <div class="skill-chip"><span>KiCAD / EasyEDA</span><span class="chip-lvl">PCB</span></div>
+          </div>
+        </div>
+
+        <!-- Group 4: Engineering Specializations -->
+        <div class="skill-category-card reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-satellite-dish"></i></div>
+            <h3 class="skill-cat-title">Avionics Engineering</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-chip"><span>Closed-Loop PID</span><span class="chip-lvl">Control</span></div>
+            <div class="skill-chip"><span>Digital Signal Processing</span><span class="chip-lvl">DSP</span></div>
+            <div class="skill-chip"><span>Sensor Fusion (IMU)</span><span class="chip-lvl">Kalman</span></div>
+            <div class="skill-chip"><span>PCB Debug &amp; Soldering</span><span class="chip-lvl">Hardware</span></div>
+            <div class="skill-chip"><span>Power &amp; Battery Mgmt</span><span class="chip-lvl">Li-Ion</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INTERACTIVE PID SIMULATOR LAB ==================== -->
+  <section class="sim-section" id="sec-simulator">
+    <div class="container">
+      <div class="section-meta reveal">
+        <div class="section-tag">Interactive Physics Lab</div>
+        <h2 class="section-title">Closed-Loop PID Simulator</h2>
+        <p class="section-desc">Experience real-time control theory in action. Adjust gains, inject impulse disturbances, or drag the inverted pendulum to observe active stabilization.</p>
+      </div>
+
+      <div class="sim-card reveal">
+        <!-- Simulator Toolbar -->
+        <div class="sim-toolbar">
+          <div class="sim-status">
+            <i class="fas fa-circle-notch fa-spin" style="color:var(--accent-cyan);"></i>
+            <span id="simStatus">STATUS: PID STABILIZED (0.0° ERROR)</span>
+          </div>
+          <div style="display:flex; gap:0.5rem;">
+            <button class="cli-shortcut-btn" id="btnResetSim" title="Reset pendulum state">
+              <i class="fas fa-redo-alt"></i> Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Simulator Grid: Canvas (Left) + Sliders Panel (Right) -->
+        <div class="sim-grid">
+          <!-- Canvas Visual Area -->
+          <div class="sim-canvas-wrap">
+            <canvas id="pidCanvas"></canvas>
+            <div class="sim-overlay-controls">
+              <button class="cli-shortcut-btn" id="btnDisturbLeft"><i class="fas fa-arrow-left"></i> Push Left</button>
+              <button class="cli-shortcut-btn" id="btnDisturbRight">Push Right <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- Real-Time Sliders Panel -->
+          <div class="sim-controls-panel">
+            <div>
+              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#fff; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+                <i class="fas fa-sliders-h" style="color:var(--accent-cyan);"></i>
+                Tuning Parameters (Gains)
+              </h4>
+
+              <!-- Kp Slider -->
+              <div class="pid-slider-group">
+                <div class="pid-slider-head">
+                  <span>Proportional Gain (\(K_p\))</span>
+                  <span class="pid-val" id="kpVal">45.0</span>
+                </div>
+                <input type="range" class="pid-slider" id="kpSlider" min="0" max="100" step="0.5" value="45.0" aria-label="Proportional Gain Kp">
+              </div>
+
+              <!-- Ki Slider -->
+              <div class="pid-slider-group">
+                <div class="pid-slider-head">
+                  <span>Integral Gain (\(K_i\))</span>
+                  <span class="pid-val" id="kiVal">0.80</span>
+                </div>
+                <input type="range" class="pid-slider" id="kiSlider" min="0" max="5" step="0.05" value="0.80" aria-label="Integral Gain Ki">
+              </div>
+
+              <!-- Kd Slider -->
+              <div class="pid-slider-group">
+                <div class="pid-slider-head">
+                  <span>Derivative Gain (\(K_d\))</span>
+                  <span class="pid-val" id="kdVal">14.0</span>
+                </div>
+                <input type="range" class="pid-slider" id="kdSlider" min="0" max="40" step="0.5" value="14.0" aria-label="Derivative Gain Kd">
+              </div>
+            </div>
+
+            <!-- Real-Time Telemetry Readouts -->
+            <div class="sim-metrics-row">
+              <div class="metric-item">
+                <div class="m-lbl">TILT ERROR</div>
+                <div class="m-val" id="simAngle" style="color:var(--accent-cyan);">0.0°</div>
+              </div>
+              <div class="metric-item">
+                <div class="m-lbl">MOTOR EFFORT</div>
+                <div class="m-val" id="simForce" style="color:var(--accent-amber);">0 N</div>
+              </div>
+              <div class="metric-item">
+                <div class="m-lbl">LOOP FREQ</div>
+                <div class="m-val" style="color:var(--accent-emerald);">100 Hz</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS SHOWCASE SECTION ==================== -->
+  <section id="sec-projects">
+    <div class="container">
+      <div class="section-meta reveal">
+        <div class="section-tag">Engineering Portfolio</div>
+        <h2 class="section-title">Built With My Hands</h2>
+        <p class="section-desc">Hardware-validated electro-mechanical builds, autonomous robotic systems, and firmware architectures. Click any card to inspect full technical specifications.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="project-filters reveal">
+        <button class="filter-btn active" data-filter="all">All Systems</button>
+        <button class="filter-btn" data-filter="control">Control &amp; CNC</button>
+        <button class="filter-btn" data-filter="robotics">Robotics &amp; Power</button>
+        <button class="filter-btn" data-filter="assistive">Assistive Tech</button>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: CNC 2D Plotter -->
+        <article class="project-card reveal" data-category="control" data-project="cnc-plotter">
+          <div class="project-header-visual">
+            <div class="project-blueprint-grid"></div>
+            <span class="project-category-tag">CNC &amp; EMBEDDED</span>
+            <div class="project-icon-badge"><i class="fas fa-pen-fancy"></i></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">
+              CNC 2D Handwriting Machine
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p class="project-desc">
+              Custom two-axis handwriting and drafting machine. Driven by Arduino Uno, CNC Shield, A4988 microstepping drivers, and tuned NEMA 14 stepper motors with low-latency GRBL G-code execution.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Arduino Uno</span>
+              <span class="tech-tag">GRBL v1.1</span>
+              <span class="tech-tag">NEMA 14</span>
+              <span class="tech-tag">A4988</span>
+              <span class="tech-tag">G-Code</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Self-Balancing Robot -->
+        <article class="project-card reveal" data-category="control" data-project="self-balancer">
+          <div class="project-header-visual">
+            <div class="project-blueprint-grid"></div>
+            <span class="project-category-tag">CONTROL THEORY</span>
+            <div class="project-icon-badge"><i class="fas fa-balance-scale"></i></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">
+              Self-Balancing Inverted Pendulum
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p class="project-desc">
+              Real-time closed-loop PID control algorithm utilizing MPU6050 6-axis IMU sensor fusion. Compensates dynamically for external disturbances with optical encoder feedback.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Closed-Loop PID</span>
+              <span class="tech-tag">MPU6050 IMU</span>
+              <span class="tech-tag">Sensor Fusion</span>
+              <span class="tech-tag">C++ Firmware</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Motion-Controlled Wheelchair -->
+        <article class="project-card reveal" data-category="assistive" data-project="motion-wheelchair">
+          <div class="project-header-visual">
+            <div class="project-blueprint-grid"></div>
+            <span class="project-category-tag">ASSISTIVE TECH</span>
+            <div class="project-icon-badge"><i class="fas fa-wheelchair"></i></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">
+              Head-Motion Wheelchair Controller
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p class="project-desc">
+              Assistive mobility system driven by MEMS head-motion orientation tracking. Interprets pitch and roll angles through embedded C filtering to safely steer motorized wheelchairs.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Embedded C</span>
+              <span class="tech-tag">MEMS Accelerometer</span>
+              <span class="tech-tag">Motor Actuators</span>
+              <span class="tech-tag">Safety Failsafes</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Autonomous Rover -->
+        <article class="project-card reveal" data-category="robotics" data-project="autonomous-rover">
+          <div class="project-header-visual">
+            <div class="project-blueprint-grid"></div>
+            <span class="project-category-tag">ROBOTICS &amp; POWER</span>
+            <div class="project-icon-badge"><i class="fas fa-robot"></i></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">
+              Autonomous Competition Rover
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p class="project-desc">
+              ESP32 dual-core robotic rover equipped with high-torque JGA-25-370 metal geared motors, BTS7960 43A motor drivers, and an engineered 4S2P Li-ion battery pack with wireless telemetry.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">ESP32</span>
+              <span class="tech-tag">BTS7960 43A</span>
+              <span class="tech-tag">4S2P Li-Ion</span>
+              <span class="tech-tag">Telemetry</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE & EDUCATION TIMELINE ==================== -->
+  <section id="sec-journey">
+    <div class="container">
+      <div class="section-meta reveal">
+        <div class="section-tag">Career &amp; Academia</div>
+        <h2 class="section-title">Experience &amp; Education</h2>
+        <p class="section-desc">Proven track record of engineering leadership, technical freelancing, and academic excellence.</p>
+      </div>
+
+      <div class="timeline-grid">
+        
+        <!-- Experience Column -->
+        <div class="timeline-column reveal">
+          <h3 class="timeline-column-title">
+            <i class="fas fa-briefcase"></i> Work &amp; Leadership
+          </h3>
+          <div class="timeline-track">
+            
+            <!-- Item 1: Freelance -->
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-content-card">
+                <div class="timeline-date"><i class="fas fa-calendar-alt"></i> Jul 2025 – Present</div>
+                <h4 class="timeline-heading">Freelance Embedded Engineer</h4>
+                <div class="timeline-sub">Self-Employed · Remote Engineering Consulting</div>
+                <ul class="timeline-bullets">
+                  <li>Delivering firmware debugging, control logic synthesis, and circuit schematic reviews.</li>
+                  <li>Designing customized microcontroller hardware integrations and sensor conditioning.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Item 2: STEM Tutor -->
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-content-card">
+                <div class="timeline-date"><i class="fas fa-calendar-alt"></i> Nov 2022 – Present</div>
+                <h4 class="timeline-heading">A-Level STEM Tutor (Math &amp; Physics)</h4>
+                <div class="timeline-sub">Private Mentorship · Remote &amp; On-Site</div>
+                <ul class="timeline-bullets">
+                  <li>Tutoring advanced calculus, kinematics, wave mechanics, and electromagnetic theory.</li>
+                  <li>Developing intuitive problem-solving frameworks that yielded top grades for students.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Item 3: Head of Avionics Club -->
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-content-card">
+                <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2024 – Present · Active</div>
+                <h4 class="timeline-heading">Head of Avionics Club</h4>
+                <div class="timeline-sub">National University of Sciences &amp; Technology (NUST)</div>
+                <ul class="timeline-bullets">
+                  <li>Directing student-led engineering research, drone telemetry prototypes, and robotics workshops.</li>
+                  <li>Bridging academic classroom theory with hands-on hardware laboratory execution.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Education Column -->
+        <div class="timeline-column reveal">
+          <h3 class="timeline-column-title">
+            <i class="fas fa-university"></i> Academic Record
+          </h3>
+          <div class="timeline-track">
+            
+            <!-- Item 1: NUST -->
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-content-card">
+                <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2023 – 2027 · In Progress</div>
+                <h4 class="timeline-heading">
+                  B.Eng. Avionics Engineering
+                  <span class="timeline-badge">⭐ 3.67 CGPA</span>
+                </h4>
+                <div class="timeline-sub">National University of Sciences &amp; Technology (NUST)</div>
+                <ul class="timeline-bullets">
+                  <li>Specializing in control engineering, embedded microcontrollers, and digital signal processing.</li>
+                  <li>Consistently maintained top quartile academic standing through Semester 5.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Item 2: A-Levels -->
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-content-card">
+                <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2021 – 2023</div>
+                <h4 class="timeline-heading">
+                  Cambridge A-Levels
+                  <span class="timeline-badge">3 A Grades</span>
+                </h4>
+                <div class="timeline-sub">The Universal Millennium College</div>
+                <ul class="timeline-bullets">
+                  <li>Solid STEM foundation in Mathematics, Physics, and Chemistry.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Item 3: O-Levels -->
+            <div class="timeline-item">
+              <div class="timeline-node"></div>
+              <div class="timeline-content-card">
+                <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2008 – 2021</div>
+                <h4 class="timeline-heading">
+                  Cambridge O-Levels
+                  <span class="timeline-badge">1 A* + 6 As</span>
+                </h4>
+                <div class="timeline-sub">Bloomfield Hall School</div>
+                <ul class="timeline-bullets">
+                  <li>Outstanding distinction across science and mathematics disciplines.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Certifications Highlight -->
+      <div class="cert-section reveal">
+        <div class="cert-card">
+          <div class="cert-icon-wrap"><i class="fas fa-award"></i></div>
+          <div>
+            <h4 style="font-family:var(--font-display); font-size:1.05rem; font-weight:700; color:#fff;">
+              IBM Professional Certification: Data Analysis with Python
+            </h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.2rem;">
+              Advanced algorithmic data processing, numerical computation, and predictive modeling using NumPy, Pandas, and Scikit-Learn.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== INTERACTIVE AVIONICS CLI TERMINAL ==================== -->
+  <section class="terminal-section" id="sec-terminal">
+    <div class="container">
+      <div class="section-meta reveal">
+        <div class="section-tag">Command Shell</div>
+        <h2 class="section-title">Avionics Terminal CLI</h2>
+        <p class="section-desc">Interactive developer console. Type commands or click the shortcut chips below to query the system.</p>
+      </div>
+
+      <div class="cli-window reveal">
+        <div class="cli-bar">
+          <div class="cli-dots">
+            <span class="cli-dot red"></span>
+            <span class="cli-dot yellow"></span>
+            <span class="cli-dot green"></span>
+          </div>
+          <div class="cli-title">bash -- muqtadir@nust-avionics-os v2.4</div>
+          <div style="font-size:0.7rem; color:var(--accent-cyan); font-family:var(--font-mono);">ONLINE</div>
+        </div>
+
+        <div class="cli-content" id="cliOutput">
+          <!-- Terminal lines injected via terminal.js -->
+        </div>
+
+        <!-- CLI Interactive Input Row -->
+        <div style="padding: 0.6rem 1.5rem; background: #040812; border-top: 1px solid var(--border-subtle);">
+          <div class="cli-prompt-row">
+            <span class="cli-prefix">muqtadir@avionics-os:~$</span>
+            <input type="text" class="cli-input" id="cliInput" placeholder="Type a command (e.g. 'skills', 'projects', 'help')..." autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+          </div>
+        </div>
+
+        <!-- Quick Shortcut Chips -->
+        <div class="cli-shortcuts">
+          <span>Quick Commands:</span>
+          <button class="cli-shortcut-btn" data-cmd="help">help</button>
+          <button class="cli-shortcut-btn" data-cmd="skills">skills</button>
+          <button class="cli-shortcut-btn" data-cmd="projects">projects</button>
+          <button class="cli-shortcut-btn" data-cmd="edu">edu</button>
+          <button class="cli-shortcut-btn" data-cmd="exp">exp</button>
+          <button class="cli-shortcut-btn" data-cmd="contact">contact</button>
+          <button class="cli-shortcut-btn" data-cmd="pid-sim">pid-sim</button>
+          <button class="cli-shortcut-btn" data-cmd="clear">clear</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT & TRANSMISSION SECTION ==================== -->
+  <section id="sec-contact">
+    <div class="container">
+      <div class="section-meta reveal">
+        <div class="section-tag">Direct Transmission</div>
+        <h2 class="section-title">Let's Build Something Remarkable</h2>
+        <p class="section-desc">Open to hardware engineering roles, embedded internships, and freelance consultations. Let's discuss your next breakthrough.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Quick Direct Channels -->
+        <div class="contact-info-panel reveal">
+          
+          <div class="contact-card copy-email-btn" style="cursor:pointer;" title="Click to copy email">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-details">
+              <div class="label">Primary Email (Click to Copy)</div>
+              <div class="value">Muqtadir0711@gmail.com</div>
+            </div>
+          </div>
+
+          <div class="contact-card copy-phone-btn" style="cursor:pointer;" title="Click to copy phone number">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-details">
+              <div class="label">Phone / WhatsApp (Click to Copy)</div>
+              <div class="value">(+92) 333 454 7518</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-details">
+              <div class="label">Location &amp; Base</div>
+              <div class="value">Gujranwala &amp; Islamabad, Pakistan</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-id-badge"></i></div>
+            <div class="contact-details">
+              <div class="label">Recruiter Contact Card</div>
+              <div style="margin-top:0.4rem;">
+                <button class="btn-primary" id="btnDownloadVcf" style="padding:0.45rem 1.1rem; font-size:0.8rem;" onclick="document.getElementById('downloadVCardBtn').click();">
+                  <i class="fas fa-download"></i> Save vCard (.vcf)
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Transmission Form -->
+        <div class="contact-form reveal">
+          <form id="portfolioContactForm">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Your Name</label>
+              <input type="text" id="contactName" class="form-input" placeholder="e.g. Dr. Alex Mercer / Hiring Team" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Your Email</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="alex@company.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactSubject">Subject / Opportunity</label>
+              <input type="text" id="contactSubject" class="form-input" placeholder="Avionics / Embedded Engineering Role" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Message / Project Scope</label>
+              <textarea id="contactMessage" class="form-textarea" placeholder="Hello Abdul, we came across your PID simulator and rover build..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+              <i class="fas fa-paper-plane"></i>
+              <span>Send Direct Transmission</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand">Abdul Muqtadir</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">
+            Avionics Engineering · National University of Sciences &amp; Technology (NUST)
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#sec-hero">Home</a>
+          <a href="#sec-skills">Skills</a>
+          <a href="#sec-simulator">PID Simulator</a>
+          <a href="#sec-projects">Projects</a>
+          <a href="#sec-journey">Timeline</a>
+          <a href="#sec-contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Abdul Muqtadir. Designed with high-performance aerospace aesthetics. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== PROJECT DEEP DIVE MODAL DIALOG ==================== -->
+  <div class="modal-overlay" id="projectModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container" id="projectModalContainer">
+      <div class="modal-header">
+        <div>
+          <div id="modalCategory" style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); text-transform:uppercase; margin-bottom:0.25rem;">CATEGORY</div>
+          <h3 id="modalTitle" style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:#fff;">Project Title</h3>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="modalLead" style="font-size:0.95rem; color:var(--text-secondary); margin-bottom:1rem; font-weight:500;"></p>
+        
+        <!-- Tech Specs Grid -->
+        <div class="modal-tech-specs" id="modalSpecs"></div>
+
+        <!-- Detailed Description -->
+        <div id="modalDetails"></div>
+
+        <div style="margin-top:1.5rem; display:flex; justify-content:flex-end;">
+          <button class="btn-primary" onclick="document.getElementById('modalCloseBtn').click();">Close Specification</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/simulator.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
