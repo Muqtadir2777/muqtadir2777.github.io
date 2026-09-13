@@ -1,0 +1,410 @@
+
+--- PAGE 1 ---
+ 
+ 
+ 
+Abstract—This work presents the design and 
+development of a compact, wideband, and conformal 
+antenna and its array tailored for EW application in 
+next-generation missile and unmanned aerial vehicle 
+(UAV) platforms. A tapered slot (Vivaldi-based) antenna 
+architecture is employed to achieve wideband 
+performance across the frequency range of 3–18 GHz, 
+supporting high-resolution angle-of-arrival (AOA) 
+detection and precise direction finding. To accommodate 
+modern aerodynamic constraints, the array is designed 
+on thin, flexible substrates such as Rogers laminates, 
+allowing seamless integration onto curved surfaces, 
+including hemispherical domes and UAV bodies. The 
+conformal array configuration ensures mechanical 
+adaptability across diverse platforms while preserving 
+electromagnetic performance.  
+I. INTRODUCTION 
+The Vivaldi antenna, originally proposed by Gibson [1], is a 
+type of end-fire traveling wave antenna known for its use of 
+printed circuit technology, which simplifies both its 
+fabrication and structural reliability. Its broadband behavior 
+and end-fire radiation characteristics make it suitable for a 
+range of applications, including satellite communication, 
+weather monitoring, and surveillance systems. Despite these 
+advantages, a single Vivaldi antenna element typically 
+offers limited gain, prompting the use of antenna arrays to 
+achieve higher performance levels. Early implementations 
+predominantly used planar array configurations. The 
+operating frequency of the Vivaldi antenna is primarily 
+influenced by the geometrical parameters of the radiating 
+element—specifically, its length, width, and tapered 
+profile—which directly affect its radiation efficiency [2], 
+[3]. As a result, Vivaldi arrays have become popular for 
+their broadband capabilities and ease of integration [4].  
+Several design enhancements, such as the inclusion of 
+arc-shaped slots, uniform slot-edge structures, and dielectric 
+lenses, have been explored to improve gain and reduce size. 
+However, these modifications often introduce greater 
+complexity and lead to larger physical dimensions [5], [6]. 
+In recent years, conformal antenna arrays have emerged as a 
+promising alternative due to their ability to reduce 
+aerodynamic drag, minimize radar cross-section, improve 
+angular coverage, and lower structural costs [3]. 
+ 
+In this paper, the designs of a planar and conformal Vivaldi-
+like antenna and its array of 4 such elements are designed 
+and discussed. It operates in a wide frequency range with  
+ 
+ 
+minimal form factor and achieves a consistent impedance 
+match and gain over a 3–18 GHz range. 
+II. ANTENNA SELECTION 
+Ultra-wideband antennas exhibit a wide impedance 
+bandwidth but not necessarily a stable radiation pattern, as 
+required in most radar applications. Moreover, in addition to 
+the large bandwidth and speciﬁc radiation pattern 
+characteristics, the installation space environment usually 
+impacts the antenna design and performance, as  
+ 
+it mainly constrains the operating frequency range. As a 
+result, miniaturization techniques need to be implemented to 
+save the installation space and to ensure an optimal trade-off 
+between the antenna size and the radiation characteristics. 
+For UWB radiating elements, this challenge is even harder 
+to fulﬁll, as gain, beam width, and efﬁciency should be 
+properly guaranteed. To this aim, several research activities, 
+in both academic and industrial ﬁelds, are in progress for the 
+identiﬁcation of new wideband antenna geometries 
+satisfying the above system requirements and constraints in 
+an increasingly extended frequency band. In particular, they 
+pertain to the planar antennas and they are focused on the 
+improvement of both frequency band and gain uniformity, 
+as well as on the polarization management capabilities, size, 
+and weight reduction.  
+ 
+Wideband antennas like Vivaldi, spiral, sinuous, and LPDA 
+are crucial for various applications due to their ability to 
+operate effectively across a wide range of frequencies. 
+Broad bandwidth is essential for high data rate 
+communication, radar systems, and other applications 
+requiring the transmission and reception of signals across a 
+wide spectrum. UWB antennas can be broadly divided into 
+two categories: 
+(i) The Type-1 wideband antennas are produced by 
+stimulated resonant modes that are either continuous or 
+multiple. Spiral and log periodic antennas are two examples 
+of these antennas [7].  
+(ii) The Type-2 wideband antennas are produced by 
+allowing emission from a limited wavelength area. Common 
+Compact, Planar and Conformal Antenna 
+Array Solution for Electronic Warfare 
+Applications 
+Urvi Joshi 
+Electronics Engineering Department  
+Defence Institute of Advanced 
+Technology (DIAT) 
+Pune, Maharashtra, India 
+urvijoshi2002@gmail.com 
+Sanket Kalamkar 
+Electronics Engineering Department  
+Defence Institute of Advanced 
+Technology (DIAT) 
+Pune, Maharashtra, India 
+sanket.kalamkar@diat.ac.in 
+Rajesh K. Singh 
+Electronics Engineering Department  
+Defence Institute of Advanced 
+Technology (DIAT) 
+Pune, Maharashtra, India 
+rajesh_singh@diat.ac.in 
+2025 IEEE Microwaves, Antennas, and Propagation Conference (MAPCON) | 979-8-3315-3722-7/25/$31.00 ©2025 IEEE | DOI: 10.1109/MAPCON65020.2025.11426418
+Authorized licensed use limited to: NUST School of Electrical Engineering and Computer Science (SEECS). Downloaded on August 23,2026 at 17:57:33 UTC from IEEE Xplore.  Restrictions apply. 
+--- PAGE 2 ---
+ 
+ 
+examples of Type-2 antennas include the Vivaldi antenna, 
+the double-ridged horn, and the resistively terminated TEM 
+horn [4], [5]. 
+The increasing demand for multi-band and ultra-wideband 
+systems has accelerated the need for antennas capable of 
+maintaining stable performance over broad frequency 
+ranges. Beyond the popular Vivaldi antenna, alternative 
+designs such as spiral, sinuous, and log-periodic dipole 
+arrays (LPDAs) offer diverse capabilities suited to various 
+applications. While selecting the antenna type, all its 
+advantages and disadvantages need to be analyzed.  
+(a) Spiral Antenna: 
+The spiral antennas are a type of wide-band antenna that 
+generate circularly polarized waves and can be easily 
+integrated with systems. They are a very suitable choice 
+because of their frequency-independent nature.  This is the 
+class whose radiation pattern and impedance are practically 
+independent of frequency for all frequencies above the 
+minimum cut-off value [9]. The advantages include 
+relatively easy impedance matching, better radiation 
+efficiency, high spectral efficiency, consistent gain, and 
+large bandwidth. The challenge of the spiral antennas is the 
+feeding mechanism. Spiral antennas are inherently 
+wideband, but the feed structure must maintain a consistent 
+impedance (often 50 Ω) across a wide frequency range. 
+(b) Sinuous Antenna: 
+It can be seen as a combination of spiral and log-periodic 
+antenna concepts, which result in a radiating element 
+capable of producing wideband radiation in the broadside 
+direction with polarization diversity. Non-self-
+complementary two-arm sinuous antenna and a self-
+complementary conical projection of the two-arms sinuous 
+structure were introduced to realize unique multiband 
+behaviour with alternating polarization handedness between 
+adjacent bands [10]. Sinuous antennas have complex 
+geometries that make fabrication and miniaturization 
+challenging. They exhibit moderate gain and bidirectional 
+radiation, which may require additional reflectors. Feeding 
+issues in sinuous antennas are critical challenges that can 
+significantly affect their broadband performance, 
+polarization purity, and radiation patterns. 
+(c) Log-Periodic Dipole Antenna (LPDA): 
+LPDAs offer wide bandwidth with stable radiation patterns 
+and consistent gain across frequencies. They support both 
+linear polarization and good impedance matching over large 
+frequency ranges [11]. Log-periodic dipole antenna printed 
+on a PCB has many advantages, including low 
+manufacturing cost, a high yield rate, and lightweight.  The 
+characteristic of this antenna changes with the logarithm of 
+frequency, and expands the characteristic in one cycle to a 
+wide channel. Normally, the log periodic antenna requires 
+more elements for accepting and sending signals. 
+Additionally, they are large and not suitable for systems 
+with limited size or volume. It has a narrower beamwidth 
+compared to other types of antennas. The assembly and 
+maintenance of the log periodic antenna may be more 
+complex and time-consuming due to the multiple elements 
+and precise spacing required. 
+(d) Vivaldi Antenna: 
+The Vivaldi antenna is a type of end-ﬁre traveling-wave 
+antenna that is highly suitable for applications requiring a 
+broad bandwidth and directional characteristics [12]. The 
+core design of Vivaldi antennas includes an exponentially 
+tapered planar slot, typically fed through electromagnetic 
+coupling by means of a microstrip-to-slot line transition. 
+This antenna operates with a non-resonant radiation 
+mechanism, where waves travel along the tapered slot, 
+conﬁned between the conductors. 
+In the design of a wideband antenna array tailored for 
+seeker-based systems, several candidate antenna structures 
+were evaluated, including spiral, sinuous, log-periodic 
+dipole, and tapered slot (Vivaldi) antennas. Each 
+configuration was assessed based on criteria such as 
+bandwidth, gain, polarization stability, structural 
+conformity, and suitability for compact integration. While 
+spiral and sinuous antennas offer excellent bandwidth and 
+polarization diversity, their bidirectional radiation and 
+fabrication complexity pose limitations for conformal 
+implementation. Similarly, log-periodic dipole arrays, 
+though broadband, require larger apertures and are less 
+planar. After a thorough comparative analysis, the Vivaldi 
+antenna was selected as the optimal solution. Its inherent 
+wideband characteristics, high directivity, low profile, and 
+ability to conform to curved surfaces make it highly 
+compatible with the compact, planar, and conformal 
+constraints of seeker-based array applications.  
+III. ANTENNA DESIGN 
+On a 20 mil thick Rogers RT6035HTC substrate, with a loss 
+tangent of 0.0023, a dielectric constant of 3.6, a Vivaldi-like 
+antenna is designed in CST studio suite 2021. Considering 
+the aforementioned design parameters into account, the 
+basic structure of the proposed Vivaldi-like antenna using 
+Co-planar waveguide (CPW) technology is demonstrated in 
+Fig. 1. The considered antenna dimensions and their values 
+are given in Table 1. The size of the antenna is 50×98 mm². 
+Tapered slots are inserted to match the impedance at 
+intermediate frequencies. Two small circular slots have been 
+inserted between the feed arm and ground arm to cater to the 
+radiation pattern at higher frequencies. The top layer 
+indicates the exponential taper profile [7] which is defined 
+by the opening rate, R and the two points P1 (x1,y1) and P2 
+(X2,Y2). The exponential taper profile is given by: 
+ 
+y = C1eR x + C₂   for   x₀ ≤ x ≤ x₁          (1) 
+ 
+where R is the rate of opening and 
+ 
+C₁ = (y₁ - y₀) / (eRx₁ - eRx₀)                      (2) 
+ 
+ 
+C₂ = (eRx₁ y₀ - eRx₀ y₁) / (eRx₁ - eRx₀)         (3) 
+ 
+ 
+Table 1: Considered specifications for the Vivaldi-like antenna. 
+Parameters Dimensions(mm) 
+length (l) 98.09 
+width (w) 50.00 
+Height of substrate (h) 0.508 
+Length of microstrip feed line (Ml) 18.09 
+Width of microstrip feed line (Mw) 4.00 
+ 
+Authorized licensed use limited to: NUST School of Electrical Engineering and Computer Science (SEECS). Downloaded on August 23,2026 at 17:57:33 UTC from IEEE Xplore.  Restrictions apply. 
+--- PAGE 3 ---
+ 
+ 
+ 
+ 
+Fig. 1 Geometry of the proposed Vivaldi-like antenna. 
+IV. SIMULATION RESULTS 
+ 
+The proposed antenna is simulated in CST Microwave 
+Studio. The reflection coefficient (S 11) is plotted in Fig. 2. 
+ 
+Fig. 2 Reflection coefficient (S11) for a single Vivaldi-like structure. 
+ 
+The simulated S 11 parameters, as illustrated in Fig. 2, 
+demonstrate a good impedance match, hence a broad 
+impedance bandwidth across the frequency spectrum.  The 
+simulated reflection coefficient results confirm wideband 
+performance, with S 11 remaining below −10 dB from 3 GHz 
+to 18 GHz. This demonstrates the antenna’s suitability for 
+broadband applications requiring good return loss. The 
+radiation characteristics of the proposed Vivaldi-like 
+antennas, plotted with respect to spatial coordinates, are 
+depicted in Fig. 3 at different frequencies.  
+ 
+(a)                                      (b) 
+ 
+ 
+(c)                                             (d) 
+              
+Fig. 3 Radiation patterns of the single-element Vivaldi-like antenna at (a) 5 
+GHz, (b) 9 GHz, (c) 13 GHz (d) 18 GHz. 
+ 
+The specific design parameters for each configuration, from 
+a single element to a 4-element array, are provided beneath 
+the corresponding figures. The 4-element array is designed 
+after considering the Vivaldi-like antenna as the reference 
+element, as illustrated in Fig. 4(a). The gap between the 
+antenna elements is kept at 2 mm to protect it from shorting. 
+The reflection coefficient is plotted in Fig. 4(b). The 
+simulation results indicate that increasing the number of 
+Vivaldi elements leads to an enhancement in antenna gain. 
+Notably, the 4-element array configuration achieves the 
+highest gain among all the designs evaluated. Radiation 
+patterns are plotted in Fig. 5. 
+ 
+(a)                                            (b) 
+Fig. 4 (a) Four-element Vivaldi-like antenna array (b) Reflection coefficient 
+(S11) for an array of 4 elements  
+ 
+(a)                                                            (b) 
+ 
+(c)                                                            (d) 
+Fig. 5 Radiation patterns of the 4-element Vivaldi-like array at (a) 5 GHz, 
+(b) 9 GHz, (c) 13 GHz, and (d) 18 GHz. 
+ 
+Radiation patterns of the array are distorted at the higher 
+frequencies, which happens due to the increase in the gap 
+between the elements at higher frequencies, which is more 
+than λ/2. The challenge here is to maintain the side lobe 
+Authorized licensed use limited to: NUST School of Electrical Engineering and Computer Science (SEECS). Downloaded on August 23,2026 at 17:57:33 UTC from IEEE Xplore.  Restrictions apply. 
+--- PAGE 4 ---
+ 
+ 
+levels below the acceptable limit. It can be further improved 
+by reducing the width of the single element.  
+V. CONFORMAL ARRAY 
+A 4×1 Vivaldi antenna structure has been conformally 
+shaped to a cylinder of different diameters to see the 
+impedance and radiation characteristics to be used for 
+compact and high-performance wideband antenna systems. 
+The configuration illustrated in Fig. 6 showcases an array of 
+tapered slot antenna elements, integrated on a curved surface 
+to suit the geometry of cylindrical platforms. The element 
+layout and feeding network are carefully optimized to 
+maintain consistent performance despite the surface 
+curvature, enabling effective angle-of-arrival estimation and 
+direction-finding capabilities. reflection coefficient (S 11) 
+characteristics of the conformal Vivaldi-like antenna array 
+were analyzed for three different cylindrical curvatures of 
+diameters 23 cm, 27 cm, and 30 cm. The array maintains S 11 
+below –10 dB across the operating spectrum as illustrated in 
+Fig. 7. Furthermore, as the diameter increases, the resonant 
+frequencies show a slight downward shift, which may be 
+attributed to the impact of the larger curvature on the current 
+distribution and effective electrical length.  
+ 
+Fig. 6 Conformal Vivaldi antenna array 
+ 
+Overall, these results suggest that the designed antenna can 
+be a good candidate for conformal shapes.  
+ 
+ 
+Fig. 7 Reflection coefficients (S 11) for Conformal Vivaldi-like antenna 
+array with diameters of 23, 27, and 30 cm. 
+ 
+The radiation patterns were also observed for the conformal 
+case. Radiation patterns show a similar behaviour as seen in 
+the planar array case. The current design will undergo 
+further refinement to enhance its performance and 
+adaptability for real-world applications. Subsequent stages 
+will include fabrication and experimental testing to validate 
+the simulated results. Additionally, efforts will be made to 
+extend the antenna’s operating frequency range toward 2–
+18 GHz, aiming to achieve broader bandwidth coverage and 
+improved functional capabilities. These advancements are 
+expected to yield more efficient results, particularly in 
+applications requiring high-resolution wideband 
+performance. 
+VI. CONCLUSION 
+A compact, planar, and conformal Vivaldi-like antenna and 
+its array have been presented to meet the requirements of 
+wideband, compact, and platform-adaptable systems, 
+particularly suited for Electronic Warfare Applications 
+seeker. The design demonstrates the ability to retain the 
+desirable characteristics of traditional Vivaldi antennas, such 
+as broadband operation and directional radiation, while 
+conforming to a curved surface for better mechanical 
+integration. The simulation results indicate promising 
+performance, validating the potential of this configuration 
+for practical use. Future enhancements, including bandwidth 
+extension and side lobe reduction, are expected to further 
+improve the antenna's effectiveness and readiness for real-
+time deployment in advanced RF systems. 
+REFERENCES 
+ 
+[1] P. J. Gibson, “The Vivaldi Aerial,” 1979 9th European Microwave 
+Conference, 1979, pp. 101-105, doi: 10.1109/EUMA.1979.332681 
+[2] C. R. Mannix, D. P. Belcher, P. S. Cannon, and M. J. Angling, “Using 
+GNSS Signals as a Proxy for SAR Signals: Correcting Ionospheric 
+Defocusing,” Radio Science, vol. 51, no. 2, Feb 2016. 
+[3] A. K. Yerrola, M. Ali, R. K. Arya, and L. Murmu, "Design of 
+Wideband Conformal Vivaldi Antenna Array," 2022 URSI Regional 
+Conference on Radio Science (USRI-RCRS) , Indore, India, 2022, pp. 
+1-3. 
+[4] C. Pfeiffer, J. Massman, and T. Steffen, “3-D printed metallic dual 
+polarized Vivaldi arrays on square and triangular lattices,” IEEE 
+Trans. Antennas Propag., vol. 69, no. 12, pp. 8325–8334, Dec. 2021. 
+[5] A. M. De Oliveira, M. B. Perotoni, S. T. Kofuji, and J. F. Justo, “A 
+Palm Tree Antipodal Vivaldi Antenna with Exponential Slot Edge for 
+Improved Radiation Pattern,” IEEE Antennas and Wireless 
+Propagation Letters, vol. 14, pp. 1334-1337, 2015. 
+[6] A. Ellgardt and A. Wikstrom, “A Single Polarized Triangular Grid 
+Tapered-Slot Array Antenna,” IEEE Trans. Antennas Propag. , vol. 
+57, no. 9, pp. 2599-2607, Sept. 2009. 
+[7] K. Y. Yazdandoost and R. Kohno, "Ultra wideband antenna," IEEE 
+Communications Magazine, vol. 42, no. 6, pp. S29-S32, June 2004. 
+[8] C.A. Balanis, Antenna Theory: Analysis and Design , 3rd ed. New 
+York: John Wiley & Sons, Inc., 2005. 
+[9] S. Patil, C. Vyas, & A. Khalore, “Spiral antennas for communication 
+engineering applications:  a systematic approach,” International 
+Journal of Innovative Research in Electronics and Communications  
+(IJIREC), vol. 3, no. 2, 2016. 
+[10] R. Sammeta, D. S. Filipovic, “Improved Efﬁciency Lens-Loaded 
+Cavity-Backed Transmit Sinuous Antenna,” IEEE Trans. Antennas 
+Propag., vol. 62, pp. 6000–6009, 2014. 
+[11] A. K. Singh, H. Kumar, G. Kumar, and M. R. Tripathy, "Seven 
+element wideband planar log-periodic antenna for TVWS base 
+station," 2017 Progress in Electromagnetics Research Symposium - 
+Fall (PIERS - FALL), Singapore, 2017, pp. 2051-2055. 
+[12] S. Kalamkar, R. K. Singh, A. Jindal, M. Mishra, S. Varughese, and U. 
+Goyal, "Compact and Wideband Antenna Array for Surveillance 
+Applications," 2024 IEEE Microwaves, Antennas, and Propagation 
+Conference (MAPCON), Hyderabad, India, 2024, pp. 1-4. 
+ 
+ 
+ 
+ 
+Authorized licensed use limited to: NUST School of Electrical Engineering and Computer Science (SEECS). Downloaded on August 23,2026 at 17:57:33 UTC from IEEE Xplore.  Restrictions apply. 

@@ -1,0 +1,1045 @@
+
+=== PAGE 1 ===
+Research Article
+A Super Wideband Directional Compact Vivaldi Antenna for
+Lower 5G and Satellite Applications
+Liton Chandra Paul
+ and Md. Mohiminul Islam
+Dept. of Electrical, Electronic and Communication Engineering, Pabna University of Science and Technology, Pabna-6600,
+Bangladesh
+CorrespondenceshouldbeaddressedtoLitonChandraPaul;litonpaulete@gmail.com
+Received 30 July 2021; Revised 21 October 2021; Accepted 1 November 2021; Published 29 November 2021
+Academic
+Editor:AhmedToahaMobashsher
+Copyright©2021LitonChandraPaulandMd.MohiminulIslam.)isisanopenaccessarticledistributedundertheCreative
+CommonsAttributionLicense,whichpermitsunrestricteduse,distribution,andreproductioninanymedium,providedthe
+originalworkisproperlycited.
+In this paper, a super wide band (SWB) Vivaldi antenna has been proposed for lower 5G bands in Sub-6GHz and satellite
+applications(S,C, X,Ku,andKband)usingvariousperformanceimprovementtechniques.InthepresentedVivaldiantenna,
+diﬀerentslotsareappliednotonlytoincreasethegainanddirectivitybutalsotogetoperatingfrequencyattheintendedspeciﬁc
+frequencyrange.Alldimensionsofthoseslotswerechosenbyusingthesweepparametermethod.Tencorrugatedsideslots,two
+circularslots,andoneviahavebeenusedtoenhancetheperformanceespeciallybandwidthandgainoftheantenna.Attheedgeof
+wirelesscommunication,wewanttoenhancetwokeyaspectswithinthecommunicationsystems:thequalityofserviceandthe
+cost.)eproposedantennaincorporatesasimplestructureandsmallsizewithdimensionsof45 ×35 ×0.79mm3.)us,after
+design,optimization,andsimulation,theantennaproducesagoodreﬂectioncoeﬃcientovertheverylargeoperatingbandwidth
+of 23.19GHz, 1<VSWR <2, maximum gain of 10.2 dBi, and average radiation eﬃciency of above 90%, which can be rec-
+ommendedasasuitableantennaforlower5Gaswellassatelliteapplications.)eantennaisdesigned,simulated,andanalyzedby
+usingcomputersimulationtechnologymicrowavestudio(CST-MWS).Finally,theperformanceoftheVivaldiantennahasbeen
+validatedbyFEKOandHFSSsoftware,andweachievedaverygoodmatchingamongtheresults.
+1. Introduction
+Since the ﬁrst Vivaldi antenna was proposed in 1979 by
+Gibson[1],itiswidelyusedinultrawidebandapplications
+such as wireless communication, biomedical detection,
+Radar, Satellite communication system, and so on [2]. A
+Vivaldiantennaisaplanarbroadbandantennathatismade
+ofadielectricsubstratemetalizedonbothsides.)efed-
+lineencirclesthemicrostripline,terminatedwithasector-
+shapedareathatencirclesthecircularspace.)eradiating
+energy at the resonant points reaches over exponential
+patternsthroughthesymmetricalslotlines[3].)eVivaldi
+antennas are categorized into three types: tapered slot
+Vivaldi antenna (TSVA), antipodal Vivaldi antenna
+(AVA),andbalancedantipodalVivaldiantenna(BAVA).
+)e authors in [4–6] discussed the diﬀerent parameter
+variation of the Vivaldi antenna both analytically and
+experimentally.Intoday’slife,itisinevitabletohavevery
+high speed data exchanging channels for wideband ap-
+plications.AVivaldiantennacanproduceultrawideband
+frequencies with high directivity and stable radiation
+pattern. )ere are several advantages of using a Vivaldi
+antenna such as broadband characteristics, simple struc-
+ture, small size, and easy manufacturing. In [7], an
+ultrawidebandpatchantennawithaU-shapedslotonthe
+radiating patch is introduced for triband satellite appli-
+cations. )e operating frequency ranges of the proposed
+structure are 4.9GHz–7GHz, 7.92GHz–11.08GHz, and
+11.85GHz–15.94GHz, and gain is varied from 2.3 to 4.5
+dBi.In[8],anovelpatchantennaisproposedconsistingof
+parasitic elements and rectangular slots on the ground
+plane. )e proposed structure has a dimension of
+16 ×8mm2. )e antenna shows the bandwidth of
+11.34–17.46GHz and gain of 4.92–6.30 dBi. A pair of
+Hindawi
+International Journal of Antennas and Propagation
+Volume 2021, Article ID 8933103, 12 pages
+https://doi.org/10.1155/2021/8933103
+
+=== PAGE 2 ===
+square-shapedslottedVivaldiantennawithdimensionof
+110 ×80mm2 has been proposed in [9]. Its operating
+frequencyrangeis2GHz–11GHzandhasmaximumgain
+of10dBi.Toenhance theperformanceofthe traditional
+Vivaldiantenna,theside-slottedVivaldiantenna(SSVA)
+forimagingapplicationisproposedin[10].Ithasasizeof
+45 ×37mm2andcoversanultrawidebandfrequencyrange.
+Itpossessesamaximumgain of6.8dBiandradiationef-
+ﬁciency is about 88%. To detect brain tumor within the
+human head, a coplanar feed ultrawide band Vivaldi an-
+tenna is proposed in [11, 12], which has a dimension of
+30 ×30mm2 and operated at a bandwidth of
+3.1GHz–10.6GHz.)egainanddirectivityareimproved
+byapplyingcorrugatedslotsinbothsidesandgratingsin
+front of the proposed antenna. A monopole Vivaldi an-
+tenna for cellular communication including LTE, GSM,
+UMTS,WiMAX,andWiFibandshasbeensimulatedand
+presentedin[13].)enovelcompactbroadbandmonopole
+Vivaldiantennahasbeenfabricatedin[14].)esizeofthe
+ﬁnal prototype is 73×69mm2. In [15], an ultrawideband
+novel Vivaldi antenna for mobile communication appli-
+cation with patterndiversity has beenproposed and fab-
+ricated. It covers 0.7–2.7GHz. )e huge bandwidth and
+highgainhavebeenachievedbythedesignedantenna[16].
+)eoperatingfrequencyis2.5–57GHzandgainis16dBi.
+To get a huge bandwidth, a comparatively larger size of
+antennaisopted.ItresultshigherVSWR(<3).Afernleaf
+inspired fractal structure has been introduced for UWB
+applications in [17]. In [18], the folding technique is ap-
+plied on the tapered slot antenna, which shows the peak
+gainof15dBiwithabalanceradiationpatterntothewhole
+operatingrange.Inanothertechnique,anumberofmet-
+amaterial structures have been presented to improve the
+directionalpropertyofconventionalantennabyreducing
+sidelobe[19].AminiaturizedAVAwithslitsanddielectric
+lens has been fabricated in [20], which operated at a
+bandwidth of 1–30GHz. In [21], a ﬂexible UWB Vivaldi
+antennawith3D-phaseadjustingunithasbeenproposed
+which has better gain and pattern diversity. It has a di-
+mensionof68 ×52mm2andcovers6– 18GHz.Manyother
+diﬀerenttechniqueshavebeenappliedtoincreaseantenna
+performancesuchasslottingtechnique,directors,patches,
+and lens loading technique. )e antenna is fabricated by
+dielectric material of Rogers 5880 with a thickness of 20
+mil. After analyzing the newly revealed Vivaldi antennas
+from[22–28],thebasicmotiveistodecreasethesizeofthe
+antennaaswellasstepupthehigheroperatingbandwidth,
+gain,andeﬃciency.
+DuringthedesignprocessofanultrawidebandVivaldi
+antenna, one faces many challenges. One of them is the
+miniaturization of the antenna with wide impedance
+bandwidthandgoodradiationperformance.Insomecases,a
+lowgainisexhibitedthroughtheentireultrawideoperating
+band.Intheminimizationprocess,reducingthesizeofthe
+antenna also decreases the performance of the antenna.
+)erefore, developing a compact design of the directional
+Vivaldi antenna with good gain and directivity, better ef-
+ﬁciency,andVSWRforsatellitecommunicationandother
+ultrawidebandapplicationsisaverychallengingtask.Inthis
+paper, a super wideband Vivaldi antenna having a huge
+bandwidth of 23.19GHz (3.06GHz–26.25GHz) and com-
+pact size of 45×35 ×0.79mm3 has been presented and
+discussed brieﬂy. )e main achievement of this research
+workistodevelopacompactandsuperwidebandVivaldi
+antenna without compromising stability of gain and high
+radiationeﬃciency.
+2. Tapered Slot Vivaldi Antenna Geometry
+)e geometrical structure of a microstrip line fed tapered
+slotsuperwidebandcompactVivaldiantennaisdescribedin
+this section. It is an exponential double-sided corrugated
+taperedslotVivaldiantenna.)etotaldesignprocesseshave
+beenpresentedinﬁvesteps.Figure1(a)representsasimple
+taperedVivaldiaerialwhichistheﬁrststepofourproposed
+antenna. Two exponential tapered slots are placed sym-
+metricallyonthetopofthesubstrate.RogersRT5880di-
+electricmaterialhasbeenusedassubstrateoftheantenna,
+havingarelativepermittivityof2.2,tangentlossof0.0009,
+andthicknessof0.79mm.)emicrostriplinefeedingisused
+asafeedingtechnique,whichconnectsthetwoexponential
+taperedslots.)eoveralldimension(L×W)of theVivaldi
+antennais45mm ×35mm.)ethicknessofthecopperplate
+whichisusedasaradiatingpatchis0.035mm.)eexpo-
+nential proﬁle of the designed Vivaldi antenna can be de-
+scribedbythefollowingequation[11]:
+x �C1eRz +C2, (1)
+where
+C1 � x2 −x1
+eRz2 −eRz1
+, (2)
+C2 �x2eRz2 −x1eRz1
+eRz2 −eRz1
+. (3)
+Here,thepoints(x 1, z1)and(x 2, z2)aretheendpointsof
+theﬂare.Inthiscase,thetaperrateis0.135whichresultsina
+widemouthopeningof25.34mmattheupperedgebetween
+the ﬂares. At the second step, four corrugated slots are
+createdinthetoptwosidesofthemetallicplates,whichare
+shown inFigure1(b).Eachﬂarehastwo corrugatedslots.
+)ewidthoftheslotsis2mm.)elengthsoftheslotsare
+4mmand4.5mm.Inthethirdstep,similarlyadditionalsix
+corrugatedslotsaremadewiththepreviousfourslotsand
+optimizedthedimensionsofthecorrugatedslotstoensure
+betterperformancethanprevioussteps.)edimensionsof
+theslotsare5mmand5.5mm.)edescribedstructureof
+the antennaispresented inFigure 1(c).Twoidenticalcir-
+cularslotshavingaradiusof5mmareaddedatthefourth
+step. )e tapered slot Vivaldi antenna with all corrugated
+andcircularslotsisshowninFigure1(d).
+Alltheslotsincludingcorrugatedslotsmaketheantenna
+ultrawideband and enhance gain as well as increase the
+eﬃciency than previous steps. And ﬁnally, a shorting pin
+named via has been used which makes direct connection
+betweenthefeedlineandmetalﬂare.)isviapromotesthe
+antennasbandwidthfromultrawidebandtosuperwideband.
+2 InternationalJournalofAntennasandPropagation
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 3 ===
+)e via also enhances the surface current distribution
+throughout the antenna. )e metal via has a height of
+0.86mm and radius of 0.6mm as shown in Figure 1(e).
+Figure1(f)showsthestructureofthemicrostriplinefeedof
+the proposed Vivaldi antenna. After applying all diﬀerent
+techniques(like corrugated both sidedslots, circularslots,
+and via) to enhance the antenna performance and using
+sweepparametersprocess,ﬁnallyasuperwidebandcompact
+taperedslotVivaldiantennahasbeenproposedwhose3D
+view withport is depicted in Figure 1(g). )egeometrical
+parametersoftheproposedSWBVivaldiantennaarelisted
+inTable1.
+Radiating ﬁn 1
+Radiating ﬁn 2
+Substrate
+Mouth opening
+W ra
+L
+y
+xz
+(a)
+y
+xz
+ra
+L1L2
+L1L2 (b)
+y
+xz
+ra
+L1L2L3L4L5
+L1L2L3L4L5
+(c)
+y
+xz
+L1L2L3L4L5
+L1L2L3L4L5
+ra
+Re
+Re (d)
+y
+xz
+L1L2L3L4L5
+L1L2L3L4L5
+ra
+Re
+Re
+Via
+(e)
+y
+x
+Lf
+Lst
+mw
+α (f)
+1 0
+y z
+x
+(g)
+Figure1:EvolutionprocessoftheproposedVivaldiantenna:(a)Step1(frontview);(b)Step2(frontview);(c)Step3(frontview);(d)Step4
+(frontview);(e)Step5(frontview)(proposed);(f)backview;(g)3Dviewoftheproposedantenna.
+InternationalJournalofAntennasandPropagation 3
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 4 ===
+3. Results and Performance Estimation
+)issectiondescribesalltheresultsandanalysisoftheproposed
+Vivaldiantennathatispresentedinprevioussections.Initially,
+theproposedVivaldiantennaisanalyzedandoptimizedusing
+3DEMsimulatorsoftwarenamedCSTmicrowavestudio.Atthe
+end, the obtained results are also veriﬁed by other two pro-
+fessionalsoftwares:FEKOandHFSS.AcomparisonoftheS 11
+curvesfromStep1toStep5isdepictedinFigure2tounderstand
+thesuccessivebandwidthimprovementafterapplyingdiﬀerent
+aforementioned techniques on the designed SWB Vivaldi an-
+tenna.ItcanbeeasilynotedthatnootherstepsexceptStep5has
+operatingbandwidthafter16GHz,andonlyforStep5,itholds
+up to 26.25GHz. So, Step 5 has a larger bandwidth than the
+previous four steps. In this case, the metal via has a great in-
+ﬂuenceonextendingtheUWBtoSWBandalsoimprovesthe
+currentdistributionoftheantenna.)eﬁnalStep5alsoprovides
+muchbetterreturnlossthananyothers.)eantennapossesses
+themaximumreturnlossof −40.322dBat13.86GHz.
+Figure3illustratesthegainoftheﬁveconsecutivestepsof
+this presented work. )e average gain of the proposed an-
+tenna is above 8 dBi through the whole operating super
+wideband ranging from 3.06GHz to 26.25GHz. )e com-
+parison of radiation eﬃciency between Step 1 to Step 5 is
+showninFigure4.)emaximumradiationeﬃciencyofthe
+proposedantennaisapproximately99%,andtheaverageis
+above 95%. )erefore, the antenna reveals good eﬃcacy to
+radiate energy. )e voltage standing wave ratios of all the
+stages of the antenna at the frequency range of 3GHz to
+27GHzaredisplayedinFigure5.ItiscertiﬁedthattheVSWR
+ofaradiatingantennavariesfrom1to2.Forthebestper-
+formance,thevaluetendstounityateveryresonantfrequency
+of the ﬁnally proposed compact Vivaldi antenna. It can be
+seen that the VSWR of the proposed antenna is 1.01, 1.02,
+1.08,1.09,1.07,1.15,1.18,and1.25atresonantfrequenciesof
+3.81GHz,6.75GHz,10GHz,12.4GHz,13.86GHz,19.5GHz,
+22.5GHz,and25.5GHz,respectively.Figure6depictsthe3D
+viewofgainfortheproposedantennaatmajorthreeresonant
+frequencies of 3.81GHz, 6.75GHz, and 13.86GHz. )e
+surface current distribution of the proposed antenna is
+196.184 A/m, 186.8222 A/m, and 351.789 A/m at the fre-
+quenciesof3.81GHz,6.75GHz,and13.86GHz,respectively,
+whicharerepresentedinFigure7.Itcanalsobeseenthatthe
+currentoftheantennaismostlyspreadontheradiatingﬁnsat
+bothlowerandhigherfrequencies,whichfavorstoassemble
+the electromagnetic energy and expand the stability of ra-
+diation of the proposed SWB Vivaldi antenna. Figure 8
+represents the S11-parameter of the ﬁnally proposed SWB
+Vivaldiantennafrom2to27GHz.Ithasbeenseenthatthere
+isasuperwideoperatingband(SWB).)e −10dBbandwidth
+oftheantennacoversfrom3.06GHzto26.25GHz.)ereare
+multiple resonant frequencies that are 3.81GHz, 6.75GHz,
+10GHz, 12.4GHz, 13.86GHz, 19.5GHz, 22.5GHz, and
+25.5GHz.)eoperatingbandcoversprescribedallthelower
+5G bands in sub-6GHz like in USA, 3100–3550MHz and
+3700–4200MHz, in Europe, 3400–3800MHz; in Spain,
+3600–3800 MHz; in China, 3300–3600MHz,
+4400–4500MHz, and 4800–4990MHz; in Ireland,
+3.4–3.8GHz;inJapan,3600–4200MHzand4400–4900MHz;
+inKorea,3400–3700MHz;inIndia3300–3400MHzaswell
+asthedesignedantennaalsocoversmanysatellitebandslike
+S-band (2–4GHz) (partial coverage), C-band (4–8GHz),
+X-band (8–12GHz), Ku-band (12–18GHz), and Ka-band
+(26–40GHz) (partial coverage). Some key performance in-
+dexes estimated by CSTare listed in Table 2. )e perfor-
+mances estimated by CST have also been buttressed and
+veriﬁedbyredesigningwiththehelpofothertworenowned
+electromagnetic (EM) simulators: FEKO and HFSS. FEKO
+uses Method of Moments (MoM) integral formulation of
+Maxwell’sequationswhereHFSSusesﬁniteelementmethod
+and CST has multiple EM simulation solvers which use
+methods such as ﬁnite element method (FEM), ﬁnite inte-
+grationtechnique(FIT),andtransmissionlinematrixmethod
+(TLM). In Figures 9–11, we have presented the estimated
+reﬂectioncoeﬃcient,gain,andeﬃciencyvalidation,respec-
+tively. )ere are very high similarity index among all the
+resultsobtainedfromCST,FEKO,andHFSSfortheproposed
+antenna.
+Comparison of |S11|
+-50
+-40
+-30
+-20
+-10
+0
+|S11| (dB)
+7 1 21 72 22 72
+Frequency (GHz)
+Step-1 (Without slot)
+Step-2 (Upper corrugated slots)
+Step-3 (All corrugated slots)
+Step-4 (All slots)
+Step-5 (Proposed)
+Figure2:Returnlosscurvefordiﬀerentevolutionstages.
+Table 1: Geometrical parameters of the proposed tapered slot
+superwidebandvivaldiantenna.
+Parameterwithsymbol Value(mm)
+Lengthofantenna, L 45
+Widthofantenna, W 35
+Heightofsubstrate, h 0.79
+)icknessofpatch, mt 0.035
+Widthofmicrostripfeedline, mw 1.2
+Tapperrate, r 0.135
+)roatwidth, s 0.05
+Backwalloﬀset,ext 1
+Radiusofcavity, ra 3
+Portcoeﬃcient, k 9.53
+Dielectricconstantofsubstrate, εr 2.2
+Tangentlossofsubstrate, δ 0.0009
+Angleofradialstub, a 70deg
+Lengthoftheradialstub, Lst 4.5
+Outermouthopening, Wo 25.34
+Radiusofcircularslots, Rc 5
+Distanceofviafromtheslot,te 1.4
+4 InternationalJournalofAntennasandPropagation
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 5 ===
+Comparison of Gain
+0
+2
+4
+6
+8
+10
+12Gain (dBi)
+7 1 21 72 22 72
+Frequency (GHz)
+Step-1 (Without slots)
+Step-2 (Upper corrugated slots)
+Step-3 (All corrugated slots)
+Step-4 (All slots)
+Step-5 (Proposed)
+Figure3:Gaincurvefordiﬀerentevolutionstages.
+Comparison of Eﬃciency
+Step-1 (Without slot)
+Step-2 (Upper corrugated slots)
+Step-3 (All corrugated slots)
+Step-4 (All slots)
+Step-5 (Proposed)
+0.6
+0.7
+0.8
+0.9
+1
+Eﬃciency
+6 9 12 15 18 21 24 273
+Frequency (GHz)
+Figure4:Eﬃciencycurvefordiﬀerentevolutionstages.
+Comparison of VSWR
+0
+0.5
+1
+1.5
+2
+VSWR
+6 9 12 15 18 21 24 273
+Frequency (GHz)
+Step-1 (Without slot)
+Step-2 (Upper corrugated slots)
+Step-3 (All corrugated slots)
+Step-4 (All slots)
+Step-5 (Proposed)
+Figure5:VSWRcurvefordiﬀerentevolutionstages.
+InternationalJournalofAntennasandPropagation 5
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 6 ===
+)eelectricﬁelds(E-ﬁelds)forallthestepsforphi �0°
+and90°aredepictedinFigure12at3.81GHz,6.75GHz,and
+13.86GHz, respectively. For phi�0° and 3.81GHz as pre-
+sented in Figure 12(a), Step 5, i.e., the proposed antenna
+possesses the main lobe of 20.6 dBV/m with the angular
+width of 163.5° where as Step 1 has the main lobe of 19.1
+dBV/m with the angular width of 24.1° only. )ough di-
+rectionsofthemainlobefortheproposedantennaandStep
+1antennaaresame(72 °),theproposedantennashowsbetter
+mainlobemagnitude(23.6dBV/m)andwiderangularwidth
+Phi
+x
+dB
+4.45
+-1.8-5.55-9.3-13.1-16.8-20.6-24.3-28.1-31.8-35.6farﬁeld (f=3.81) [1]
+Type
+Approximation
+Component
+Output
+Frequency
+Rad. eﬃc.
+Tot. eﬃc.
+Gain
+enabled (kR >> 1)
+Abs
+Gain
+3.81 GHz
+-0.5478 dB
+-0.5482 dB
+4.447 dB
+Farﬁeld
+y
+xz
+(a)
+Phi
+x
+dB
+7.21
+0.956-2.79-6.54-10.3-14-17.8-21.5-25.3
+-32.8-29
+Type
+Gain
+farﬁeld (f=6.75) [1]
+Approximation
+Component
+Output
+Frequency
+Rad. eﬃc.
+Tot. eﬃc.
+enabled (kR >> 1)
+Abs
+Gain
+6.75 GHz
+-0.1576 dB
+-0.1583 dB
+7.206 dB
+Farﬁeld
+y
+xz (b)
+Phi
+x
+dB
+8.9
+2.65-1.1
+-8.6-4.85
+-12.4
+-27.4
+-16.1-19.9
+-31.1
+-23.6farﬁeld (f=13.86) [1]
+Type
+Approximation
+Component
+Output
+Frequency
+Rad. eﬃc.
+Tot. eﬃc.
+Gain
+enabled (kR >> 1)
+Abs
+Gain
+13.86 GHz
+-0.2394 dB
+-0.2398dB
+8.899 dB
+Farﬁeld
+y
+xz
+(c)
+Figure6:3Dradiationpatternat(a)3.81GHz,(b)6.75GHz,and(c)13.86GHz.
+surface current (f=3.81) 
+Frequency
+Phase
+Maximum
+3.81 GHz
+0
+196.184 A/m
+A/m
+196
+160
+140
+120
+100
+80
+60
+40
+20
+0
+(a)
+surface current (f=6.75) 
+Frequency
+Phase
+Maximum
+6.75 GHz
+0
+186.822 A/m
+A/m
+187
+160
+140
+120
+100
+80
+60
+40
+20
+0 (b)
+surface current (f=13.86) 
+Frequency
+Phase
+Maximum
+13.86 GHz
+0
+351.798 A/m
+352
+320
+280
+240
+200
+160
+120
+80
+40
+0
+A/m
+(c)
+Figure7:Surfacecurrentdistributionat(a)3.81GHz,(b)6.75GHz,and(c)13.86GHz.
+6 InternationalJournalofAntennasandPropagation
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 7 ===
+(110.7°) as in Figure 12(b). For the proposed antenna at
+phi �0oasshowninFigure12(c),themainlobedirection
+slightlyshiftedfrom89 °(Step1)to91 °at13.86GHz,andin
+thiscase,thesidelobelabelis −7.6dB.InFigure12(d),the
+designedantennahasamainlobedirectionof2 °,magnitude
+ofmainlobeof17.1dBV/m,and3dBangularwidthof35.3 °.
+Ontheotherhand,aspresentedinFigures12(e)and12(f),
+theproposedantennaholdsthemagnitudeofmainlobeof
+9.78dBV/mand16.3dBV/mand3dBangularwidthof28.1 °
+and31.9°;directionsofmainlobesare2 °and4°at6.75GHz
+and13.86GHz,respectively.
+)emagneticﬁelds(H-ﬁelds)forallthestepsofthe
+proposedantennaarepresentedinFigure13considering
+diﬀerent conditions. Figures 13(a)–13(c) present the
+H-ﬁeldsforphi �0°at3.81GHz,6.75GHz,and13.86GHz,
+respectively. And Figures 13(d)–13(f) show the H-ﬁelds
+forphi �90°.Atphi �0°and3.81GHzresonantfrequency,
+the ﬁnally designed antenna shows the main lobe mag-
+nitudeof −30.9dBA/mandmainlobedirectionof136 °.
+)eantenna(Step5)presentsthesidelobelabelof −9.4dB
+and −4.6dBforphi �0°;6.75GHzandphi �0°;13.86GHz.
+At phi�90°, the proposed antenna has the main lobe
+0
+-10
+-20
+-30
+-40
+-50
+-60 dB
+0 3 69 1 2 15 18 21 24 27
+Frequency (GHz)
+S-Parameters [Magnitude in dB]
+Figure8:ReturnlosscurveofStep5(proposedVivaldiantenna).
+Table2:PerformancemetricsoftheproposedsuperwidebandVivaldiantenna.
+Nameoftheparameter Value
+−10dBbandwidth(GHz) 23.19
+Lowercutoﬀfrequency(GHz) 3.06
+Highercutoﬀfrequency(GHz) 26.25
+Returnloss(dB)at13.86GHz −40.19
+Max.gain(dBi) 10.2
+VSWR 1 <VSWR <2
+Eﬃciency(%) Above90
+Validation of |S11|
+FEKO
+HFSS
+CST
+-50
+-40
+-30
+-20
+-10
+0
+|S11| (dB)
+7 1 21 72 22 72
+Frequency (GHz)
+Figure9:ValidationofreturnlosscurveoftheproposedVivaldiantenna.
+InternationalJournalofAntennasandPropagation 7
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 8 ===
+Validation of Gain
+0
+2
+4
+6
+8
+10
+12Gain (dBi)
+7 1 21 72 22 72
+Frequency (GHz)
+FEKO
+HFSS
+CST
+Figure10:ValidationofgaincurveoftheproposedVivaldiantenna.
+Eﬃciency Validation
+0.6
+0.7
+0.8
+0.9
+1
+Eﬃciency
+6 9 12 15 18 21 24 273
+Frequency (GHz)
+FEKO
+HFSS
+CST
+Figure11:ValidationofeﬃciencycurveoftheproposedVivaldiantenna.
+Phi= 0 Phi = 180
+-10 0 10 20
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld E-Field (r=1 m) Abs (Phi=0)
+eta/Degree vs. dBV/m
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5
+(a)
+Phi= 0 Phi = 180
+-10 0 10 20
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld E-Field (r=1 m) Abs (Phi=0)
+eta/Degree vs. dBV/m
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5 (b)
+Figure12:Continued.
+8 InternationalJournalofAntennasandPropagation
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 9 ===
+magnitude of −34.4 dBA/m, −41.7 dBA/m, and −35.2
+dBA/m, and main lobe directions are 2°, 2°, and 4° for
+3.81GHz,6.75GHz,and13.86GHz,respectively.Table3
+shows a comparison scenario with some recently pub-
+lished relevant works. From the table, our proposed
+Vivaldi antenna has compact size compared with many
+otherantennasandalsopossessesasuperwideoperating
+band covering sub-6GHz band, S-, C-, X-, Ku-, and
+K-bands of satellite applications. It also shows excellent
+returnlossproﬁleandmaximumgainof10.2dBiholding
+good average gain over the entire operating super
+wideband.
+Phi= 0 Phi = 180
+-10 0 10 20
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld E-Field (r=1 m) Abs (Phi=0)
+eta/Degree vs. dBV/m
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5
+(c)
+Phi= 90 Phi = 270
+-5 0 51 0
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld E-Field (r=1 m) Abs (Phi=90)
+eta/Degree vs. dBV/m
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5 (d)
+Phi= 90 Phi = 270
+-20 0 10
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld E-Field (r=1 m) Abs (Phi=90)
+eta/Degree vs. dBV/m
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5
+(e)
+Phi= 90 Phi = 270
+-5 501 0
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld E-Field (r=1 m) Abs (Phi=90)
+eta/Degree vs. dBV/m
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5 (f)
+Figure12:Electricﬁeld(E-ﬁeld)forallthestepsatPhi �0°and90°:(a)E-ﬁeld(Phi �0°;3.81GHz);(b)E-ﬁeld(Phi �0°;6.75GHz);(c)E-
+ﬁeld(Phi �0°;13.86GHz);(d)E-ﬁeld(Phi �90°;3.81GHz);(e)E-ﬁeld(Phi �90°;6.75GHz);(f)E-ﬁeld(Phi �90°;13.86GHz).
+InternationalJournalofAntennasandPropagation 9
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 10 ===
+Phi = 0 Phi = 180
+-60 -50 -40
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld H-Field (r=1 m) Abs (Phi=0)
+eta/Degree vs. dBA/m
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5
+(a)
+Phi = 0 Phi = 180
+-70 -50 -30
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld H-Field (r=1 m) Abs (Phi=0)
+eta/Degree vs. dBA/m
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5 (b)
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5
+Phi = 0 Phi = 180
+-60 -40
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld H-Field (r=1 m) Abs (Phi=0)
+eta/Degree vs. dBA/m
+(c)
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5
+Phi = 90 Phi = 270
+-55 -35 -45
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld H-Field (r=1 m) Abs (Phi=90)
+eta/Degree vs. dBA/m (d)
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5
+Phi = 90 Phi = 270
+-70 -50
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld H-Field (r=1 m) Abs (Phi=90)
+eta/Degree vs. dBA/m
+(e)
+Step 1
+Step 2
+Step 3
+Step 4
+Step 5
+Phi = 90 Phi = 270
+-55 -35 -45
+0
+3030
+6060
+9090
+120120
+150150
+180
+Farﬁeld H-Field (r=1 m) Abs (Phi=90)
+eta/Degree vs. dBA/m (f)
+Figure13:Magneticﬁeld(H-ﬁeld)forallthestepsatPhi �0°and90°:(a)H-ﬁeld(Phi �0°;3.81GHz);(b)H-ﬁeld(Phi �0°;6.75GHz);(c)H-
+ﬁeld(Phi �0°;13.86GHz);(d)H-ﬁeld(Phi �90°;3.81GHz);(e)H-ﬁeld(Phi �90°;6.75GHz);(f)H-ﬁeld(Phi �90°;13.86GHz).
+10 InternationalJournalofAntennasandPropagation
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 11 ===
+4. Conclusion
+AsuperwidebandVivaldiantennaforlower5Gandsatellite
+applicationsatC-,X-,Ku-,andK-bandshasbeenpresented.
+Diﬀerentstrategiesareappliedtoenhancetheperformance
+aswellastomakeitcompact.Itisachievedbyetchingten
+opposite corrugated slots and two circular slots in the
+metallic ﬂares. )e material of substrate, radiating ﬁns,
+cavitydiameter,stubradius,stubangleetc.parametersare
+optimizedtoreducethesizeoftheantennaandtogetbetter
+performanceespeciallytogetsuperwideband.Resultsshow
+thatthemodiﬁedﬂareschangeelectricallengthandenhance
+thegaingreaterthan8dBi,byadjustingtheradiusandangle
+of stub. )ere is an important eﬀect of substrate material
+overtheperformanceparameters,especiallybandwidthand
+eﬃciency. )e proposed Vivaldi antenna covers super
+wideband(3.06GHzto26.25GHz),showingareturningloss
+of −40.322dB,maximumgainof10.2dBi,VSWRof1.07,
+andaverageradiationeﬃciencyofabove95%.Giventhat,
+there are very good matching index during performance
+validation by the CST, FEKO, and HFSS. )erefore, the
+proposeddesigncanbeconsideredasanexcellentmodelfor
+thelower5Gandsatelliteapplications.
+Data Availability
+)edatausedtosupporttheﬁndingsofthisstudyarein-
+cludedwithinthearticle.
+Conflicts of Interest
+)eauthorsdeclarethattheyhavenoconﬂictsofinterest.
+References
+[1] P. J. Gibson, “)e vivaldi aerial,” inProceedings of the 9th
+European Microwave Conference, 1979, pp.101–105, Brigh-
+ton,UK,September1979.
+[2] D. H. Schaubert, “Endﬁre tapered slot antenna characteris-
+tics,” in Proceedings of the 6th Int. Conf. Antennas and
+Propagation,vol.2,pp.432–436,Coventry,UK,April1989.
+[3] C.A.Balanis, Antenna: Analysis and Design,JohnWileyand
+Sons,NewJersey,3rdedition,2005.
+[4] R.JanaswamyandD.Schaubert,“Analysisofthetaperedslot
+antenna,” IEEE Transactions on Antennas and Propagation,
+vol.35,no.9,pp.1058–1065,1987.
+[5] K. S. Yngvesson, D. H. Schaubert, E. L. kollberg,
+T.L.Korzeniowski,T.)ungren,andJ.F.Johansson,“End-
+ﬁre tapered slot antennas on dielectric substrates,”IEEE
+Transactions on Antennas and Propagation, vol. 33,
+pp.1392–1400,1987.
+[6] K.S.Yngvesson,T.L.Korzeniowski,Y.-S.Kim,E.L.Kollberg,
+and J. F. Johansson, “)e tapered slot antenna-a new inte-
+grated element for millimeter-wave applications,” IEEE
+Transactions on Microwave 3eory and Techniques, vol. 37,
+no.2,pp.365–374,1989.
+[7] A. Naghar, “Ultra wideband and tri-band antennas for sat-
+elliteapplicationsatC-,X-,andKubands,”in Proceedings of
+the 2014 IEEE Mediterranean Microwave Symposium,pp.1–5,
+Marrakech,Morocco,December2014.
+[8] G.Ahmad,“Anovelpatchantennadesignwithslottedground
+plane for satellite communications,”Sindh University Re-
+search Journal (Science Series), vol. 49, no. 4, pp. 767–772,
+2017.
+[9] P.Kaur,K.Kaur,andK.Kaur,“ModiﬁcationofVivaldita-
+pered slot antenna with square shaped slot,”International
+Journal of Engineering Trends and Technology,vol.50,no.4,
+pp.230–233,2017.
+[10] M.Z.Mahmud,M.T.Islam,M.Samsuzzaman,S.Kibria,and
+N. Misran, “Design and parametric investigation of direc-
+tional antenna for microwave imaging application,”IET
+Microwaves, Antennas & Propagation,2016.
+[11] L.C.Paul,M.N.Hossain,M.M.U.Rashid,M.M.Mowla,
+M. Z. Mahmud, and M. T. Islam, “A novel miniaturized
+coplanarwaveguidefedtaperedslotultrawidebandVivaldi
+antennaformicrowaveimagingapplications,”in Proceedings
+of the IEEE 10th International Conference on Computing,
+Communication and Networking Technologies, pp. 1–6,
+Kanpur,India,July2019.
+[12] L. C. Paul, M. N. Hossain, M. M. Mowla, M. Z. Mahmud,
+R. Azim, and M. T. Islam, “Human brain tumor detection
+usingCPWfedUWBVivaldiantenna,”in Proceedings of the
+2019 IEEE International Conference on Biomedical Engi-
+neering, Computer and Information Technology for Health,
+pp.1–6,Dhaka,Bangladesh,November2019.
+[13] D.Navarro,“CompactwidebandVivaldimonopoleforLTE
+mobile communications,” inProceedings of the IEEE An-
+tennas and Propagation Society International Symposium,
+pp.1098-1099,Orlando,FL,USA,July2013.
+Table3:Comparisonwithsomerecentlypublishedworks.
+Ref.no. Size(L × W × h)mm3 Max.gain(dBi) BW(GHz) Returnloss(dB)
+[16] 186 ×77 ×0.55 16 2.5–57 —
+[17] 62 ×50.8 ×0.8 10 1.3–20 ≈−33
+[18] 100 ×60 ×0.008 15 3–22 ≈−45
+[19] 60 ×40 ×0.508 17.7 3.68–43.5 ≈−43
+[20] 100 ×96 ×0508 2.2–11 1–30 ≈−35
+[21] 68 ×52 ×0.25 14 6–18 ≈−43
+[22] 80 ×44 ×9.2 - 2.4–18 ≈−40
+[23] 140 ×66 ×1.5 ≈10 5–27 ≈−25
+[24] 70 ×50 ×1 15 2.8–15 ≈−31
+[25] 66.5 ×50 ×1 8.5 10–30 ≈−50
+[26] 36 ×32 ×2 8 2.5–11 ≈−40
+[27] 31 ×20 ×0.51 11 5.3–40 ≈−25
+[28] 200 ×125 ×1.2 10.5 0.95–15.5 —
+Ourdesigned 45 ×35 ×0.79 10.2 3.06–26.25 −40.32
+InternationalJournalofAntennasandPropagation 11
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PAGE 12 ===
+[14] D. V. Navarro-M´endez, “Compact wideband Vivaldi
+monopoleforLTEmobilecommunications,” IEEE Antennas
+and Wireless Propagation Letters,vol.14,pp.1068–1071,2015.
+[15] Y.Dong,J.Choi,andT.Itoh,“Vivaldiantennawithpattern
+diversityfor0.7to2.7GHzcellularbandApplications,” IEEE
+Antennas and Wireless Propagation Letters, vol. 17, no. 2,
+pp.247–250,2018.
+[16] J.Eichenberger,E.Yetisir,andN.Ghalichechian,“High-gain
+antipodalVivaldiantennawithpseudoelementandnotched
+taperedslotoperatingat(2.5to57)GHz,” IEEE Transactions
+on Antennas and Propagation,vol.67,no.7,pp.4357–4366,
+2019.
+[17] B.Biswas,R.Ghatak,andD.R.Poddar,“Afernfractalleaf
+inspiredwidebandAntipodalVivaldiantennaformicrowave
+imagingsystem,” IEEE Transactions on Antennas and Prop-
+agation,vol.65,no.11,pp.6126–6129,2017.
+[18] A.S.Arezoomand,R.-A.Sadeghzadeh,andM.Naser-Mog-
+hadasi,“Noveltechniquesintaperedslotantennaforlinearity
+phase center and gain enhancement,”IEEE Antennas and
+Wireless Propagation Letters,vol.16,pp.270–273,2017.
+[19] X.Li,H.Zhou,Z.Gao,H.Wang,andG.Lv,“Metamaterial
+slabs covered UWB antipodal Vivaldi antenna,”IEEE An-
+tennas and Wireless Propagation Letters, vol.16, pp. 2943–
+2946,2017.
+[20] M. Moosazadeh, S. Kharkovsky, J. T. Case, and B. Samali,
+“Miniaturized UWB antipodal Vivaldi antenna and its ap-
+plication for detection of void inside concrete specimens,”
+IEEE Antennas and Wireless Propagation Letters, vol. 16,
+pp.1317–1320,2017.
+[21] L.Sang,S.Wu,G.Liu,J.Wang,andW.Huang,“High-gain
+UWBVivaldiantennaloadedwithreconﬁgurable3-Dphase
+Adjustingunitlens,” IEEE Antennas and Wireless Propagation
+Letters,vol.19,no.2,pp.322–326,2020.
+[22] J. Bourqui, M. Okoniewski, and E. C. Fear, “Balanced an-
+tipodalVivaldiantennawithdielectricdirectorfornear-ﬁeld
+microwave imaging,” IEEE Transactions on Antennas and
+Propagation,vol.58,no.7,pp.2318–2326,July2010.
+[23] I.T.NassarandT.M.Weller,“Anovelmethodforimproving
+antipodal Vivaldi antenna performance,”IEEE Transactions
+on Antennas and Propagation,vol.63,no.7,pp.3321–3324,
+July2015.
+[24] Y.-W.WangandZ.-W.Yu,“Anovelsymmetricdouble-slot
+structure for antipodal Vivaldi antenna to lower cross-po-
+larizationlevel,” IEEE Transactions on Antennas and Propa-
+gation,vol.65,no.10,pp.5599–5604,2017.
+[25] G.Teni,N.Zhang,J.Qiu,andP.Zhang,“Researchonanovel
+miniaturized antipodal Vivaldi antenna with improved ra-
+diation,” IEEE Antennas and Wireless Propagation Letters,
+vol.12,pp.417–420,2013.
+[26] D.Yang,S.Liu,andD.Geng,“Aminiaturizedultra-wideband
+Vivaldi antenna with low cross polarization,”IEEE Access,
+vol.5,pp.23352–23357,2017.
+[27] Z.Yin,G.He,X.-X.Yang,andS.Gao,“Miniaturizedultra-
+widebandhalf-modeVivaldiantennabasedonmirrorimage
+theory,” IEEE Antennas and Wireless Propagation Letters,
+vol.19,no.4,pp.695–699,April2020.
+[28] P. Zhang and J. Li, “Compact UWB and low-RCS Vivaldi
+antenna using ultrathin microwave-absorbing materials,”
+IEEE Antennas and Wireless Propagation Letters, vol. 16,
+pp.1965–1968,2017.
+12 InternationalJournalofAntennasandPropagation
+ 8039, 2021, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1155/2021/8933103 by INASP/HINARI - PAKISTAN, Wiley Online Library on [13/08/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

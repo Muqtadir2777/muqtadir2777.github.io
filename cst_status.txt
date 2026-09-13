@@ -1,0 +1,4 @@
+=== CST MODEL INSPECTION ===
+Total Solids Count: 2
+Solid 0: Vivaldi:Substrate
+Solid 1: Vivaldi:Radiator_Ground

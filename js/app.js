@@ -69,7 +69,7 @@
     });
   }
 
-  // Bind subtle click sounds to buttons and links
+  // Bind subtle click sounds to interactive items
   document.addEventListener('click', (e) => {
     if (e.target.closest('button, a, .project-card, .skill-chip, .info-chip')) {
       SoundFX.playClick();
@@ -149,12 +149,11 @@
     const hudRollEl = document.getElementById('hudRoll');
     const hudHeadingEl = document.getElementById('hudHeading');
 
-    // Make HUD react to mouse movement
     window.addEventListener('mousemove', (e) => {
       const nx = (e.clientX / window.innerWidth - 0.5) * 2;
       const ny = (e.clientY / window.innerHeight - 0.5) * 2;
-      targetRoll = nx * 22; // max 22 deg roll
-      targetPitch = -ny * 18; // max 18 deg pitch
+      targetRoll = nx * 22;
+      targetPitch = -ny * 18;
     });
 
     function drawHUD() {
@@ -163,12 +162,10 @@
       const cx = W / 2;
       const cy = H / 2;
 
-      // Smooth interpolation (spring physics)
       roll += (targetRoll - roll) * 0.08;
       pitch += (targetPitch - pitch) * 0.08;
       heading = (142 + roll * 0.8 + 360) % 360;
 
-      // Update HUD telemetry DOM numbers
       if (hudPitchEl) hudPitchEl.textContent = `${pitch >= 0 ? '+' : ''}${pitch.toFixed(1)}°`;
       if (hudRollEl) hudRollEl.textContent = `${roll >= 0 ? '+' : ''}${roll.toFixed(1)}°`;
       if (hudHeadingEl) hudHeadingEl.textContent = `${Math.round(heading).toString().padStart(3, '0')}°`;
@@ -179,14 +176,13 @@
       ctx.translate(cx, cy);
       ctx.rotate((roll * Math.PI) / 180);
 
-      // Pitch vertical displacement (2 px per degree)
       const pitchOffset = pitch * 2.2;
 
-      // Sky Background (Top)
+      // Sky Background
       ctx.fillStyle = '#081a33';
       ctx.fillRect(-W, -H * 2 + pitchOffset, W * 2, H * 2);
 
-      // Ground Background (Bottom)
+      // Ground Background
       ctx.fillStyle = '#1c130c';
       ctx.fillRect(-W, pitchOffset, W * 2, H * 2);
 
@@ -221,19 +217,16 @@
 
       ctx.restore();
 
-      // Fixed Aircraft Reticle / Crosshair in center
+      // Fixed Aircraft Reticle
       ctx.strokeStyle = '#f59e0b';
       ctx.lineWidth = 2.5;
       ctx.beginPath();
-      // Left Wing Bar
       ctx.moveTo(cx - 40, cy);
       ctx.lineTo(cx - 15, cy);
       ctx.lineTo(cx - 15, cy + 6);
-      // Right Wing Bar
       ctx.moveTo(cx + 40, cy);
       ctx.lineTo(cx + 15, cy);
       ctx.lineTo(cx + 15, cy + 6);
-      // Center Pip
       ctx.moveTo(cx - 3, cy);
       ctx.lineTo(cx + 3, cy);
       ctx.stroke();
@@ -256,11 +249,11 @@
     if (!el) return;
 
     const titles = [
-      'Avionics Engineering Undergrad @ NUST',
-      'Embedded Systems & Firmware Specialist',
-      'PID & State-Space Control Systems Engineer',
-      'Autonomous Robotics & Hardware Builder',
-      'Digital Signal Processing Enthusiast'
+      'Avionics Engineering Undergrad @ NUST CAE (Sem 7)',
+      'RF & Antenna Engineer (CST Studio Suite & ADS)',
+      'Hardware-in-the-Loop (HIL) & SDR Telemetry Specialist',
+      'Digital Closed-Loop PID & LQR Control Engineer',
+      'Embedded Firmware & Robotics Architect'
     ];
 
     let titleIdx = 0;
@@ -281,12 +274,12 @@
       }
 
       if (!isDeleting && charIdx === current.length) {
-        typingSpeed = 2200; // Pause at end
+        typingSpeed = 2200;
         isDeleting = true;
       } else if (isDeleting && charIdx === 0) {
         isDeleting = false;
         titleIdx = (titleIdx + 1) % titles.length;
-        typingSpeed = 400; // Pause before new word
+        typingSpeed = 400;
       }
 
       setTimeout(type, typingSpeed);
@@ -321,10 +314,10 @@
           const exp = document.getElementById('countExp');
           const sem = document.getElementById('countSem');
 
-          if (cgpa) animateCount(cgpa, 3.67, 2, 1600);
-          if (proj) animateCount(proj, 4, 0, 1200);
+          if (cgpa) animateCount(cgpa, 3.73, 2, 1600);
+          if (proj) animateCount(proj, 8, 0, 1200);
           if (exp) animateCount(exp, 3, 0, 1000);
-          if (sem) animateCount(sem, 5, 0, 800);
+          if (sem) animateCount(sem, 7, 0, 800);
         }
       }, { threshold: 0.25 });
       observer.observe(statsSection);
@@ -349,7 +342,6 @@
         else navbar.classList.remove('scrolled');
       }
 
-      // Active Section Highlighter
       let currentSec = '';
       sections.forEach((sec) => {
         const secTop = sec.offsetTop - 120;
@@ -364,14 +356,13 @@
       });
     }, { passive: true });
 
-    // Intersection Observer for Reveal animations
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('vis');
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
 
     document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
   })();
@@ -401,8 +392,124 @@
     });
   })();
 
-  // --- 8. PROJECT FILTERING & RICH MODAL DATA ---
+  // --- 8. PROJECT FILTERING & RICH MODAL DATA (UPDATED WITH SEMESTER 7 PROJECTS) ---
   const PROJECT_DATA = {
+    'vivaldi-antenna': {
+      title: 'Super Wideband (3–18 GHz) Conformal Vivaldi Antenna for EW & UAVs',
+      category: 'RF, Microwave & Antennas',
+      icon: 'fa-satellite-dish',
+      lead: 'Electromagnetic design, simulation, and parametric optimization of an ultra-compact planar and aerodynamically conformal Vivaldi antenna achieving a 6:1 impedance bandwidth ratio.',
+      specs: [
+        { label: 'Frequency Band', val: '3.0 GHz – 18.0 GHz (SWB)' },
+        { label: 'Substrate', val: 'Rogers RT6035HTC / RT5880' },
+        { label: 'Feed Network', val: 'Co-Planar Waveguide (CPW)' },
+        { label: 'Return Loss', val: 'S11 < -10 dB across band' },
+        { label: 'Dimensions', val: '50.0 x 98.08 x 0.508 mm' },
+        { label: 'Software Suite', val: 'CST Studio Suite 2025' }
+      ],
+      details: `
+        <p style="margin-bottom:1rem; color:#cbd5e1;">Designed an end-fire traveling-wave Vivaldi antenna for airborne Electronic Support Measures (ESM), radar surveillance, and UAV direction-finding conformal seeker arrays.</p>
+        <h4 style="color:#38bdf8; font-size:0.95rem; margin-bottom:0.5rem;">Key Engineering Innovations:</h4>
+        <ul style="padding-left:1.2rem; color:#cbd5e1; line-height:1.7; margin-bottom:1.2rem;">
+          <li>Synthesized single-layer CPW-to-slotline transition eliminating the parasitic inductive reactance of metallic vias.</li>
+          <li>Formulated analytical exponential flare profile governed by \(y(x) = C_1 e^{Rx} + C_2\) with rate \(R = 0.16\text{ mm}^{-1}\).</li>
+          <li>Engineered 4 curved parasitic ground slits and circular tuning slots (\(R=1.8\text{ mm}\)) to suppress destructive high-frequency standing waves.</li>
+          <li>Evaluated conformal aerodynamic cylinder bending along UAV fuselages with mutual coupling (\(S_{21}\)) isolation analysis.</li>
+        </ul>
+      `
+    },
+    'hil-telemetry': {
+      title: 'Hardware-in-the-Loop (HIL) UAV Altitude Control via 915 MHz SDR',
+      category: 'UAV Telemetry & SDR',
+      icon: 'fa-plane-departure',
+      lead: 'Real-time Hardware-in-the-Loop flight telemetry testbed interfacing a 2nd-order aircraft dynamics model with an ADALM-Pluto SDR and closed-loop PID autopilot.',
+      specs: [
+        { label: 'RF Link Frequency', val: '915 MHz ISM Band' },
+        { label: 'Hardware SDR', val: 'ADALM-Pluto (Analog Devices)' },
+        { label: 'Flight Autopilot', val: 'Closed-Loop PID Altitude Loop' },
+        { label: 'Demodulation', val: 'Quadrature FM Demod' },
+        { label: 'Filtering', val: 'Single-Pole IIR Low-Pass' },
+        { label: 'Plant Dynamics', val: '2nd-Order State-Space in Python' }
+      ],
+      details: `
+        <p style="margin-bottom:1rem; color:#cbd5e1;">Developed a real-time HIL telemetry simulation bridging digital flight software with physical over-the-air radio frequency links.</p>
+        <h4 style="color:#38bdf8; font-size:0.95rem; margin-bottom:0.5rem;">System Architecture:</h4>
+        <ul style="padding-left:1.2rem; color:#cbd5e1; line-height:1.7; margin-bottom:1.2rem;">
+          <li>Implemented numerical solver simulating second-order UAV climb dynamics under variable atmospheric density and wind shear.</li>
+          <li>Modulated altitude state variables onto a 915 MHz carrier using frequency modulation (FM) and streamed I/Q samples through the ADALM-Pluto SDR.</li>
+          <li>Constructed receiver DSP pipeline with quadrature demodulation and IIR filter to extract clear telemetry under AWGN channel conditions.</li>
+        </ul>
+      `
+    },
+    'chebyshev-filter': {
+      title: '2.4 GHz 5th-Order Chebyshev Stepped-Impedance Low-Pass Filter',
+      category: 'RF & Microwave Systems',
+      icon: 'fa-wave-square',
+      lead: 'Design, parametric circuit simulation, and full 3D electromagnetic validation of a 5th-order Chebyshev microstrip filter for 2.4 GHz avionics ISM-band interference rejection.',
+      specs: [
+        { label: 'Cutoff Frequency', val: '2.4 GHz (-3 dB point)' },
+        { label: 'Filter Topology', val: 'Stepped-Impedance Microstrip' },
+        { label: 'Substrate', val: 'FR4 (Er = 4.4, h = 1.6 mm)' },
+        { label: 'Synthesis Tool', val: 'Keysight LineCalc & ADS' },
+        { label: 'Statistical Analysis', val: 'Monte Carlo Yield Analysis' },
+        { label: '3D Validation', val: 'CST Microwave Studio' }
+      ],
+      details: `
+        <p style="margin-bottom:1rem; color:#cbd5e1;">Synthesized a distributed microstrip low-pass filter to reject out-of-band harmonics and mitigate telemetry receiver desensitization.</p>
+        <h4 style="color:#38bdf8; font-size:0.95rem; margin-bottom:0.5rem;">Design & Optimization Workflow:</h4>
+        <ul style="padding-left:1.2rem; color:#cbd5e1; line-height:1.7; margin-bottom:1.2rem;">
+          <li>Calculated Chebyshev low-pass prototype g-values and mapped lumped capacitors/inductors to high/low characteristic impedance microstrip sections.</li>
+          <li>Optimized microstrip step discontinuities and T-junctions in Keysight ADS.</li>
+          <li>Executed Monte Carlo tolerance analysis for PCB manufacturing variations in dielectric thickness and copper etch width.</li>
+        </ul>
+      `
+    },
+    'twip-robot': {
+      title: 'Two-Wheeled Inverted Pendulum Robot: LQR vs. Cascaded PID',
+      category: 'Robotics & Control Theory',
+      icon: 'fa-balance-scale',
+      lead: 'Comprehensive mathematical modeling, state-space formulation, and physical hardware stabilization comparing full-state LQR with practical cascaded PID control.',
+      specs: [
+        { label: 'Dynamic Model', val: 'Lagrangian Non-Linear Dynamics' },
+        { label: 'Sensor Suite', val: 'MPU6050 6-DOF IMU (100 Hz)' },
+        { label: 'Filtering', val: 'Real-Time Complementary Filter' },
+        { label: 'Control Architectures', val: 'LQR vs. Cascaded PID' },
+        { label: 'Firmware', val: 'C++ with Timer Interrupts' },
+        { label: 'Hardware', val: 'Custom Chassis & H-Bridge Stage' }
+      ],
+      details: `
+        <p style="margin-bottom:1rem; color:#cbd5e1;">An in-depth study of an under-actuated, open-loop unstable dynamical system comparing modern optimal state-feedback (LQR) with physical embedded implementation constraints.</p>
+        <h4 style="color:#38bdf8; font-size:0.95rem; margin-bottom:0.5rem;">Key Findings & Solutions:</h4>
+        <ul style="padding-left:1.2rem; color:#cbd5e1; line-height:1.7; margin-bottom:1.2rem;">
+          <li>Derived full linearization of the cart-pole system around the unstable upright equilibrium.</li>
+          <li>Demonstrated why theoretical LQR degrades when cart displacement states \((x, \dot{x})\) are unobserved without high-resolution optical encoders.</li>
+          <li>Engineered cascaded PID firmware with derivative filtering and anti-windup clamping to overcome motor deadband and achieve stable balance.</li>
+        </ul>
+      `
+    },
+    'function-generator': {
+      title: 'Discrete Multi-Waveform Analog Function Generator',
+      category: 'Analog Electronics & Instrumentation',
+      icon: 'fa-microscope',
+      lead: 'End-to-end design, SPICE simulation, and physical PCB validation of an analog function generator utilizing an NE555 astable core and active op-amp wave-shaping stages.',
+      specs: [
+        { label: 'Generated Waveforms', val: 'Square, Triangle, Sine' },
+        { label: 'Frequency Range', val: '10 Hz – 50 kHz Adjustable' },
+        { label: 'Core Oscillator', val: 'NE555 Precision Astable' },
+        { label: 'Wave-Shapers', val: 'Active Op-Amp Integrator & Shaper' },
+        { label: 'Distortion (THD)', val: '< 2.5% on Sine Waveform' },
+        { label: 'Validation', val: 'Multisim SPICE & DSO Measurements' }
+      ],
+      details: `
+        <p style="margin-bottom:1rem; color:#cbd5e1;">Constructed a discrete, high-reliability analog waveform synthesis architecture for avionics instrumentation and calibration.</p>
+        <h4 style="color:#38bdf8; font-size:0.95rem; margin-bottom:0.5rem;">Analog Design Highlights:</h4>
+        <ul style="padding-left:1.2rem; color:#cbd5e1; line-height:1.7; margin-bottom:1.2rem;">
+          <li>Configured NE555 50% duty cycle astable multivibrator core for stable reference clock generation.</li>
+          <li>Cascaded low-offset operational amplifier integrator stage for linear ramp triangular wave conversion.</li>
+          <li>Implemented active diode wave-shaping network producing smooth sinusoidal outputs with low total harmonic distortion.</li>
+        </ul>
+      `
+    },
     'cnc-plotter': {
       title: 'CNC 2D Plotter & Handwriting Machine',
       category: 'Embedded & Control Systems',
@@ -427,27 +534,26 @@
         </ul>
       `
     },
-    'self-balancer': {
-      title: 'Self-Balancing Inverted Pendulum Robot',
-      category: 'Robotics & Control Theory',
-      icon: 'fa-balance-scale',
-      lead: 'Two-wheeled dynamically stabilized robot utilizing closed-loop PID control and 6-DOF IMU sensor fusion.',
+    'autonomous-rover': {
+      title: 'Autonomous Competition Heavy Rover',
+      category: 'Robotics & Power Electronics',
+      icon: 'fa-robot',
+      lead: 'Rugged competition rover engineered with ESP32 telemetry, BTS7960 high-power H-bridges, and custom 4S2P Li-ion pack.',
       specs: [
-        { label: 'Control Loop', val: 'Digital PID (100 Hz)' },
-        { label: 'Sensor Suite', val: 'MPU6050 6-Axis Gyro/Accel' },
-        { label: 'Filtering', val: 'Complementary / Kalman Filter' },
-        { label: 'Motors', val: 'Geared DC Motors with Optical Encoders' },
-        { label: 'Firmware', val: 'C++ with Low-Level Interrupts' },
-        { label: 'Platform', val: 'Microcontroller with PWM H-Bridge' }
+        { label: 'Compute Core', val: 'ESP32 Dual-Core 240MHz' },
+        { label: 'Motor Drivers', val: 'Dual BTS7960 43A H-Bridges' },
+        { label: 'Motors', val: 'High-Torque JGA-25-370 All-Metal Gear' },
+        { label: 'Battery Pack', val: 'Custom 4S2P 16.8V Li-Ion 18650 Pack' },
+        { label: 'Telemetry', val: 'WiFi / BLE UDP Real-Time Stream' },
+        { label: 'Chassis', val: 'High-Impact Reinforced Alloy' }
       ],
       details: `
-        <p style="margin-bottom:1rem; color:#cbd5e1;">Built on the fundamental principles of control theory and inverted pendulum physics, this robot achieves autonomous balance by continuously computing tilt error and commanding corrective counter-torque.</p>
-        <h4 style="color:#38bdf8; font-size:0.95rem; margin-bottom:0.5rem;">Control System Architecture:</h4>
+        <p style="margin-bottom:1rem; color:#cbd5e1;">A high-end autonomous rover engineered for endurance robotic challenges. Featuring heavy-duty power management and high-torque drivetrain designed for rugged terrain traversal.</p>
+        <h4 style="color:#38bdf8; font-size:0.95rem; margin-bottom:0.5rem;">Power & Telemetry Engineering:</h4>
         <ul style="padding-left:1.2rem; color:#cbd5e1; line-height:1.7; margin-bottom:1.2rem;">
-          <li>Filtered high-frequency accelerometer noise and low-frequency gyroscope drift via real-time complementary filtering.</li>
-          <li>Engineered custom PID control loop with anti-windup clamping to eliminate overshoot during sudden impulse disturbances.</li>
-          <li>Implemented encoder position feedback to maintain zero net linear drift on level surfaces.</li>
-          <li>Interactive simulation available live on this website in the PID Lab section!</li>
+          <li>Built custom 4S2P Lithium-Ion battery module with active BMS protection circuits.</li>
+          <li>Interfaced dual BTS7960 motor driver stages capable of handling 43A peak stall current.</li>
+          <li>Streamed live onboard telemetry (battery voltage, motor current, RPM) over ESP32 WebSockets.</li>
         </ul>
       `
     },
@@ -470,29 +576,6 @@
           <li>Configured angular deadband windows to prevent unintended drive trigger from natural head nods.</li>
           <li>Smooth S-curve acceleration filtering to avoid jerky transitions and patient discomfort.</li>
           <li>Emergency tilt cutoff and watchdog failsafes for complete user safety.</li>
-        </ul>
-      `
-    },
-    'autonomous-rover': {
-      title: 'Autonomous Competition Heavy Rover',
-      category: 'Autonomy & Power Electronics',
-      icon: 'fa-robot',
-      lead: 'Rugged competition rover engineered with ESP32 telemetry, BTS7960 high-power H-bridges, and custom 4S2P Li-ion pack.',
-      specs: [
-        { label: 'Compute Core', val: 'ESP32 Dual-Core 240MHz' },
-        { label: 'Motor Drivers', val: 'Dual BTS7960 43A H-Bridges' },
-        { label: 'Motors', val: 'High-Torque JGA-25-370 All-Metal Gear' },
-        { label: 'Battery Pack', val: 'Custom 4S2P 16.8V Li-Ion 18650 Pack' },
-        { label: 'Telemetry', val: 'WiFi / BLE UDP Real-Time Stream' },
-        { label: 'Chassis', val: 'High-Impact Reinforced Alloy' }
-      ],
-      details: `
-        <p style="margin-bottom:1rem; color:#cbd5e1;">A high-end autonomous rover engineered for endurance robotic challenges. Featuring heavy-duty power management and high-torque drivetrain designed for rugged terrain traversal.</p>
-        <h4 style="color:#38bdf8; font-size:0.95rem; margin-bottom:0.5rem;">Power & Telemetry Engineering:</h4>
-        <ul style="padding-left:1.2rem; color:#cbd5e1; line-height:1.7; margin-bottom:1.2rem;">
-          <li>Built custom 4S2P Lithium-Ion battery module with active BMS protection circuits.</li>
-          <li>Interfaced dual BTS7960 motor driver stages capable of handling 43A peak stall current.</li>
-          <li>Streamed live onboard telemetry (battery voltage, motor current, RPM) over ESP32 WebSockets.</li>
         </ul>
       `
     }
@@ -626,12 +709,13 @@
         'VERSION:3.0',
         'FN:Abdul Muqtadir',
         'N:Muqtadir;Abdul;;;',
-        'TITLE:Avionics & Embedded Systems Engineer',
-        'ORG:National University of Sciences & Technology (NUST)',
+        'TITLE:Avionics, RF & Embedded Systems Engineer',
+        'ORG:National University of Sciences & Technology (NUST CAE)',
         'EMAIL;TYPE=INTERNET,HOME:Muqtadir0711@gmail.com',
         'TEL;TYPE=CELL:+923334547518',
         'ADR;TYPE=HOME:;;Gujranwala;Punjab;;Pakistan',
-        'NOTE:Avionics Engineering Undergrad at NUST. Embedded Systems, PID Control, DSP, Robotics.',
+        'NOTE:Avionics Engineering Undergrad (Sem 7, CGPA: 3.73/4.00) at NUST CAE. RF/Microwave (CST, ADS), SDR Telemetry, PID/LQR Controls, Embedded Systems.',
+        'URL:https://muqtadir2777.github.io',
         'END:VCARD'
       ].join('\r\n');
 
@@ -661,7 +745,7 @@
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('contactName')?.value || 'Guest';
-      showToast(`Thank you, ${name}! Your transmission has been received.`);
+      showToast(`Thank you, ${name}! Transmission received successfully.`);
       contactForm.reset();
     });
   }

@@ -14,11 +14,11 @@
   const COMMANDS = {
     help: () => `
 <div style="color: #38bdf8; font-weight: 700; margin-bottom: 0.3rem;">AVAILABLE SYSTEM COMMANDS:</div>
-  <span style="color: #a7f3d0;">skills</span>       - List technical skills, tools & CAD proficiencies
-  <span style="color: #a7f3d0;">projects</span>     - Explore hardware, robotics & control systems projects
-  <span style="color: #a7f3d0;">edu</span>          - View academic record (NUST Avionics 3.67 GPA)
-  <span style="color: #a7f3d0;">exp</span>          - Work experience, freelancing & leadership
-  <span style="color: #a7f3d0;">contact</span>      - Display email, phone and location
+  <span style="color: #a7f3d0;">skills</span>       - List RF/Microwave, embedded, control & CAD proficiencies
+  <span style="color: #a7f3d0;">projects</span>     - Explore antennas, SDR telemetry, robotics & control builds
+  <span style="color: #a7f3d0;">edu</span>          - View academic record (NUST CAE, 3.73 CGPA, Sem 7)
+  <span style="color: #a7f3d0;">exp</span>          - Work experience, consulting & leadership
+  <span style="color: #a7f3d0;">contact</span>      - Display email, phone, location & profiles
   <span style="color: #a7f3d0;">pid-sim</span>      - Jump to interactive PID Control Simulator
   <span style="color: #a7f3d0;">download-cv</span>  - Launch ATS-optimized Print/PDF CV mode
   <span style="color: #a7f3d0;">whoami</span>       - Engineer identity profile summary
@@ -27,55 +27,61 @@
 
     whoami: () => `
 <div style="color: #fff; font-weight: 700;">Abdul Muqtadir</div>
-<div style="color: #38bdf8;">Avionics Engineer · Embedded Systems & Autonomous Robotics Specialist</div>
+<div style="color: #38bdf8;">Avionics, RF &amp; Embedded Systems Engineer · Semester 7</div>
 <div style="color: #cbd5e1; margin-top: 0.3rem;">
-  Undergraduate at NUST (CGPA: 3.67/4.00). Specialist in C/C++, PID closed-loop control,
-  DSP algorithms, PCB debugging, sensor fusion, and microcontrollers (ESP32, Arduino, ARM).
+  Undergraduate at <strong>NUST College of Aeronautical Engineering (CAE)</strong>.
+  <strong>CGPA: 3.73 / 4.00</strong> (Semester 7).
+  Specialist in RF/Microwave 3D EM modeling (CST Studio Suite, Keysight ADS),
+  SDR Telemetry (ADALM-Pluto), Closed-Loop Digital PID/LQR Control, and Embedded Firmware (C/C++).
 </div>
 `,
 
     skills: () => `
 <div style="color: #38bdf8; font-weight: 700;">TECHNICAL ARSENAL:</div>
-  <span style="color: #f59e0b;">▸ Languages:</span>     C/C++, Python, MATLAB, G-Code, Embedded C, Bash
-  <span style="color: #f59e0b;">▸ Hardware:</span>      ESP32, STM32, Arduino, IMU (MPU6050), BTS7960, Steppers
-  <span style="color: #f59e0b;">▸ Simulation:</span>    Simulink, Proteus, LabVIEW, Tinkercad
-  <span style="color: #f59e0b;">▸ CAD & Design:</span>  CATIA, AutoCAD, KiCAD/EasyEDA
-  <span style="color: #f59e0b;">▸ Domains:</span>       PID Control Systems, DSP, Sensor Fusion, PCB Debugging
+  <span style="color: #f59e0b;">▸ RF &amp; Antennas:</span>   CST Studio Suite 2025, Keysight ADS, LineCalc, S-Parameters (S11, S21), Vivaldi / Conformal Arrays
+  <span style="color: #f59e0b;">▸ Comms &amp; SDR:</span>     ADALM-Pluto SDR, 915 MHz FM Telemetry, Quadrature Demod, IIR Filters
+  <span style="color: #f59e0b;">▸ Control Theory:</span>  Closed-Loop PID, State-Space, LQR, MATLAB/Simulink, IMU Sensor Fusion
+  <span style="color: #f59e0b;">▸ Languages:</span>       C/C++, Embedded C, Python (NumPy, SciPy, Pandas), MATLAB, G-Code
+  <span style="color: #f59e0b;">▸ Hardware:</span>        ESP32 Dual-Core, STM32, Arduino Uno, MPU6050, BTS7960 43A, A4988
+  <span style="color: #f59e0b;">▸ CAD &amp; PCB:</span>       CATIA V5 (3D CAD), AutoCAD, KiCAD / EasyEDA
 `,
 
     projects: () => `
-<div style="color: #38bdf8; font-weight: 700;">ENGINEERING BUILDS:</div>
-  <span style="color: #10b981;">[1] CNC 2D Plotter:</span> Custom handwriting machine (Arduino Uno + CNC Shield + GRBL)
-  <span style="color: #10b981;">[2] Self-Balancing Robot:</span> Real-time PID inverted pendulum balance + IMU fusion
-  <span style="color: #10b981;">[3] Autonomous Rover:</span> ESP32 competition rover with BTS7960 & 4S2P Li-ion pack
-  <span style="color: #10b981;">[4] Motion Wheelchair:</span> MEMS head-motion tracking assistive tech controller
+<div style="color: #38bdf8; font-weight: 700;">FEATURED ENGINEERING BUILDS:</div>
+  <span style="color: #10b981;">[1] SWB Vivaldi Antenna (3-18 GHz):</span> Conformal planar array for EW/UAV radar (CST Studio Suite)
+  <span style="color: #10b981;">[2] HIL UAV Altitude Telemetry:</span> ADALM-Pluto SDR + Python plant + 915 MHz FM autopilot link
+  <span style="color: #10b981;">[3] 2.4 GHz Chebyshev LPF:</span> 5th-order stepped-impedance microstrip filter (Keysight ADS & CST)
+  <span style="color: #10b981;">[4] TWIP Inverted Pendulum:</span> LQR vs. Cascaded PID dynamical modeling & physical build
+  <span style="color: #10b981;">[5] CNC 2D Handwriting Machine:</span> Arduino Uno + GRBL v1.1 + A4988 + NEMA 14
+  <span style="color: #10b981;">[6] Autonomous Heavy Rover:</span> ESP32 + BTS7960 43A + 4S2P Li-Ion + WiFi Telemetry
 `,
 
     edu: () => `
-<div style="color: #38bdf8; font-weight: 700;">ACADEMIC BACKGROUND:</div>
-  <span style="color: #fff; font-weight: 600;">▸ B.Eng. Avionics Engineering</span> (2023 – 2027)
-    National University of Sciences & Technology (NUST) | <span style="color: #f59e0b;">CGPA: 3.67 / 4.00</span>
-  <span style="color: #fff; font-weight: 600;">▸ A-Levels</span> (2021 – 2023)
+<div style="color: #38bdf8; font-weight: 700;">ACADEMIC RECORD:</div>
+  <span style="color: #fff; font-weight: 600;">▸ B.Eng. Avionics Engineering</span> (2023 – 2027 · In Progress)
+    College of Aeronautical Engineering (CAE), NUST | <span style="color: #f59e0b; font-weight:700;">CGPA: 3.73 / 4.00 (Sem 7)</span>
+  <span style="color: #fff; font-weight: 600;">▸ Cambridge A-Levels</span> (2021 – 2023)
     The Universal Millennium College | <span style="color: #f59e0b;">3 A Grades (STEM)</span>
-  <span style="color: #fff; font-weight: 600;">▸ O-Levels</span> (2008 – 2021)
+  <span style="color: #fff; font-weight: 600;">▸ Cambridge O-Levels</span> (2008 – 2021)
     Bloomfield Hall School | <span style="color: #f59e0b;">1 A*, 6 As</span>
 `,
 
     exp: () => `
-<div style="color: #38bdf8; font-weight: 700;">EXPERIENCE & LEADERSHIP:</div>
-  <span style="color: #38bdf8;">▸ Freelance Embedded Engineer</span> (Jul 2025 – Present)
-    Hardware circuit design, firmware programming & consulting.
-  <span style="color: #38bdf8;">▸ A-Level STEM Tutor (Math & Physics)</span> (Nov 2022 – Present)
+<div style="color: #38bdf8; font-weight: 700;">EXPERIENCE &amp; LEADERSHIP:</div>
+  <span style="color: #38bdf8;">▸ Freelance Engineering Consultant</span> (Jul 2025 – Present)
+    Hardware circuit design, firmware programming &amp; RF consulting.
+  <span style="color: #38bdf8;">▸ Head of Avionics Club</span> (NUST CAE · 2024 – Present)
+    Organizing robotics hackathons, SDR telemetry testbeds &amp; technical workshops.
+  <span style="color: #38bdf8;">▸ A-Level STEM Tutor (Math &amp; Physics)</span> (Nov 2022 – Present)
     Mentoring students in advanced calculus, kinematics and mechanics.
-  <span style="color: #38bdf8;">▸ Head of Avionics Club</span> (NUST)
-    Organizing robotics workshops, hackathons and student R&D projects.
 `,
 
     contact: () => `
 <div style="color: #38bdf8; font-weight: 700;">COMMUNICATION CHANNELS:</div>
   <span style="color: #cbd5e1;">Email:</span>    <a href="mailto:Muqtadir0711@gmail.com" style="color:#38bdf8;">Muqtadir0711@gmail.com</a>
   <span style="color: #cbd5e1;">Phone:</span>    (+92) 333 454 7518
-  <span style="color: #cbd5e1;">Location:</span> Gujranwala / Islamabad, Pakistan
+  <span style="color: #cbd5e1;">Location:</span> Gujranwala / Risalpur, Pakistan
+  <span style="color: #cbd5e1;">GitHub:</span>   <a href="https://github.com/muqtadir2777" target="_blank" style="color:#38bdf8;">github.com/muqtadir2777</a>
 `,
 
     'pid-sim': () => {
@@ -86,7 +92,7 @@
 
     'download-cv': () => {
       window.print();
-      return '<span style="color:#10b981;">Triggered ATS Printable Resume View!</span>';
+      return '<span style="color:#10b981;">Triggered ATS Printable Resume View! Check the resume/ folder for dedicated assets.</span>';
     },
 
     sudo: () => '<span style="color:#f59e0b;">[AUTH SUCCESS] User muqtadir granted avionics root permissions.</span>',
@@ -164,5 +170,5 @@
   });
 
   // Initial welcome message
-  printLine(`<span style="color:#38bdf8; font-weight:700;">Avionics Terminal Shell v2.4 initialized.</span> Type <span style="color:#10b981; font-weight:700;">'help'</span> to explore interactive commands.`);
+  printLine(`<span style="color:#38bdf8; font-weight:700;">Avionics Terminal Shell v2.7 initialized.</span> Type <span style="color:#10b981; font-weight:700;">'help'</span> to explore interactive commands.`);
 })();

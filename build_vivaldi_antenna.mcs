@@ -1,0 +1,758 @@
+
+' --- Full Cleanup of Old Components ---
+On Error Resume Next
+Solid.Delete "Antenna:Radiator_Ground"
+Solid.Delete "Antenna:Substrate"
+Solid.Delete "Vivaldi:Radiator_Ground"
+Solid.Delete "Vivaldi:Substrate"
+Component.Delete "Antenna"
+Component.Delete "Vivaldi"
+Curve.DeleteCurve "Antenna_Curves"
+Curve.DeleteCurve "Vivaldi_Curves"
+Port.Delete "1"
+Monitor.Delete "Farfield (f=3 GHz)"
+Monitor.Delete "Farfield (f=5 GHz)"
+Monitor.Delete "Farfield (f=9 GHz)"
+Monitor.Delete "Farfield (f=13 GHz)"
+Monitor.Delete "Farfield (f=18 GHz)"
+On Error GoTo 0
+
+' --- Create Clean Component Vivaldi ---
+Component.New "Vivaldi"
+
+' --- Units ---
+With Units
+    .Geometry "mm"
+    .Frequency "GHz"
+    .Time "ns"
+End With
+
+Solver.FrequencyRange "2.5", "19.0"
+
+' --- Rogers RT6035HTC Substrate Material ---
+On Error Resume Next
+Material.Delete "Rogers_RT6035HTC"
+On Error GoTo 0
+
+With Material
+    .Reset
+    .Name "Rogers_RT6035HTC"
+    .Folder ""
+    .FrqType "all"
+    .Type "Normal"
+    .SetMaterialUnit "GHz", "mm"
+    .Epsilon "3.6"
+    .Mue "1.0"
+    .TanD "0.0023"
+    .TanDFreq "10.0"
+    .TanDGiven "True"
+    .TanDModel "ConstTanD"
+    .Colour "0.85", "0.85", "0.85"
+    .Wireframe "False"
+    .Create
+End With
+
+' --- Substrate Brick (Z = -h to 0) ---
+With Brick
+    .Reset
+    .Name "Substrate"
+    .Component "Vivaldi"
+    .Material "Rogers_RT6035HTC"
+    .Xrange "-25.0000", "25.0000"
+    .Yrange "0.0", "98.0900"
+    .Zrange "-0.5080", "0.0"
+    .Create
+End With
+
+' --- Golden Copper Radiator Sheet (Z = 0) ---
+With Brick
+    .Reset
+    .Name "Radiator_Ground"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Xrange "-25.0000", "25.0000"
+    .Yrange "0.0", "98.0900"
+    .Zrange "0.0", "0.0"
+    .Create
+End With
+
+' --- Curve Container (Z = 0) ---
+With Curve
+    .NewCurve "Vivaldi_Curves"
+End With
+
+' --- Main Vivaldi Flare + Top P2 Fillet Cutout (Z = 0) ---
+With Polygon
+    .Reset
+    .Name "Slot_Poly"
+    .Curve "Vivaldi_Curves"
+    .Point "23.500000", "0.000000"
+    .Point "23.118333", "1.702336"
+    .Point "22.736667", "3.303826"
+    .Point "22.355000", "4.810445"
+    .Point "21.973333", "6.227813"
+    .Point "21.591667", "7.561217"
+    .Point "21.210000", "8.815630"
+    .Point "20.828333", "9.995733"
+    .Point "20.446667", "11.105927"
+    .Point "20.065000", "12.150353"
+    .Point "19.683333", "13.132908"
+    .Point "19.301667", "14.057258"
+    .Point "18.920000", "14.926849"
+    .Point "18.538333", "15.744926"
+    .Point "18.156667", "16.514541"
+    .Point "17.775000", "17.238564"
+    .Point "17.393333", "17.919696"
+    .Point "17.011667", "18.560479"
+    .Point "16.630000", "19.163302"
+    .Point "16.248333", "19.730414"
+    .Point "15.866667", "20.263930"
+    .Point "15.485000", "20.765841"
+    .Point "15.103333", "21.238020"
+    .Point "14.721667", "21.682226"
+    .Point "14.340000", "22.100119"
+    .Point "13.958333", "22.493255"
+    .Point "13.576667", "22.863102"
+    .Point "13.195000", "23.211040"
+    .Point "12.813333", "23.538366"
+    .Point "12.431667", "23.846301"
+    .Point "12.050000", "24.135995"
+    .Point "11.668333", "24.408527"
+    .Point "11.286667", "24.664914"
+    .Point "10.905000", "24.906114"
+    .Point "10.523333", "25.133024"
+    .Point "10.141667", "25.346493"
+    .Point "9.760000", "25.547316"
+    .Point "9.378333", "25.736242"
+    .Point "8.996667", "25.913976"
+    .Point "8.615000", "26.081182"
+    .Point "8.233333", "26.238482"
+    .Point "7.851667", "26.386464"
+    .Point "7.470000", "26.525680"
+    .Point "7.088333", "26.656648"
+    .Point "6.706667", "26.779858"
+    .Point "6.325000", "26.895769"
+    .Point "5.943333", "27.004814"
+    .Point "5.561667", "27.107399"
+    .Point "5.180000", "27.203906"
+    .Point "4.798333", "27.294697"
+    .Point "4.416667", "27.380109"
+    .Point "4.035000", "27.460462"
+    .Point "3.653333", "27.536054"
+    .Point "3.271667", "27.607169"
+    .Point "2.890000", "27.674070"
+    .Point "2.508333", "27.737009"
+    .Point "2.126667", "27.796219"
+    .Point "1.745000", "27.851921"
+    .Point "1.363333", "27.904324"
+    .Point "0.981667", "27.953622"
+    .Point "0.600000", "28.000000"
+    .Point "0.600000", "86.000000"
+    .Point "0.600000", "86.000000"
+    .Point "0.616955", "86.604500"
+    .Point "0.667714", "87.209000"
+    .Point "0.751965", "87.813500"
+    .Point "0.869189", "88.418000"
+    .Point "1.018663", "89.022500"
+    .Point "1.199464", "89.627000"
+    .Point "1.410479", "90.231500"
+    .Point "1.650407", "90.836000"
+    .Point "1.917767", "91.440500"
+    .Point "2.210913", "92.045000"
+    .Point "2.528036", "92.649500"
+    .Point "2.867181", "93.254000"
+    .Point "3.226258", "93.858500"
+    .Point "3.603052", "94.463000"
+    .Point "3.995241", "95.067500"
+    .Point "4.400407", "95.672000"
+    .Point "4.816050", "96.276500"
+    .Point "5.239610", "96.881000"
+    .Point "5.668475", "97.485500"
+    .Point "6.100000", "98.090000"
+    .Point "-6.100000", "98.090000"
+    .Point "-6.100000", "98.090000"
+    .Point "-5.668475", "97.485500"
+    .Point "-5.239610", "96.881000"
+    .Point "-4.816050", "96.276500"
+    .Point "-4.400407", "95.672000"
+    .Point "-3.995241", "95.067500"
+    .Point "-3.603052", "94.463000"
+    .Point "-3.226258", "93.858500"
+    .Point "-2.867181", "93.254000"
+    .Point "-2.528036", "92.649500"
+    .Point "-2.210913", "92.045000"
+    .Point "-1.917767", "91.440500"
+    .Point "-1.650407", "90.836000"
+    .Point "-1.410479", "90.231500"
+    .Point "-1.199464", "89.627000"
+    .Point "-1.018663", "89.022500"
+    .Point "-0.869189", "88.418000"
+    .Point "-0.751965", "87.813500"
+    .Point "-0.667714", "87.209000"
+    .Point "-0.616955", "86.604500"
+    .Point "-0.600000", "86.000000"
+    .Point "-0.600000", "28.000000"
+    .Point "-0.600000", "28.000000"
+    .Point "-0.981667", "27.953622"
+    .Point "-1.363333", "27.904324"
+    .Point "-1.745000", "27.851921"
+    .Point "-2.126667", "27.796219"
+    .Point "-2.508333", "27.737009"
+    .Point "-2.890000", "27.674070"
+    .Point "-3.271667", "27.607169"
+    .Point "-3.653333", "27.536054"
+    .Point "-4.035000", "27.460462"
+    .Point "-4.416667", "27.380109"
+    .Point "-4.798333", "27.294697"
+    .Point "-5.180000", "27.203906"
+    .Point "-5.561667", "27.107399"
+    .Point "-5.943333", "27.004814"
+    .Point "-6.325000", "26.895769"
+    .Point "-6.706667", "26.779858"
+    .Point "-7.088333", "26.656648"
+    .Point "-7.470000", "26.525680"
+    .Point "-7.851667", "26.386464"
+    .Point "-8.233333", "26.238482"
+    .Point "-8.615000", "26.081182"
+    .Point "-8.996667", "25.913976"
+    .Point "-9.378333", "25.736242"
+    .Point "-9.760000", "25.547316"
+    .Point "-10.141667", "25.346493"
+    .Point "-10.523333", "25.133024"
+    .Point "-10.905000", "24.906114"
+    .Point "-11.286667", "24.664914"
+    .Point "-11.668333", "24.408527"
+    .Point "-12.050000", "24.135995"
+    .Point "-12.431667", "23.846301"
+    .Point "-12.813333", "23.538366"
+    .Point "-13.195000", "23.211040"
+    .Point "-13.576667", "22.863102"
+    .Point "-13.958333", "22.493255"
+    .Point "-14.340000", "22.100119"
+    .Point "-14.721667", "21.682226"
+    .Point "-15.103333", "21.238020"
+    .Point "-15.485000", "20.765841"
+    .Point "-15.866667", "20.263930"
+    .Point "-16.248333", "19.730414"
+    .Point "-16.630000", "19.163302"
+    .Point "-17.011667", "18.560479"
+    .Point "-17.393333", "17.919696"
+    .Point "-17.775000", "17.238564"
+    .Point "-18.156667", "16.514541"
+    .Point "-18.538333", "15.744926"
+    .Point "-18.920000", "14.926849"
+    .Point "-19.301667", "14.057258"
+    .Point "-19.683333", "13.132908"
+    .Point "-20.065000", "12.150353"
+    .Point "-20.446667", "11.105927"
+    .Point "-20.828333", "9.995733"
+    .Point "-21.210000", "8.815630"
+    .Point "-21.591667", "7.561217"
+    .Point "-21.973333", "6.227813"
+    .Point "-22.355000", "4.810445"
+    .Point "-22.736667", "3.303826"
+    .Point "-23.118333", "1.702336"
+    .Point "-23.500000", "0.000000"
+    .Point "-23.500000", "0.000000"
+    .Point "23.500000", "0.000000"
+    .Point "23.500000", "0.000000"
+    .Create
+End With
+
+With CoverCurve
+    .Reset
+    .Name "Slot_Sheet"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Curve "Vivaldi_Curves:Slot_Poly"
+    .Create
+End With
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:Slot_Sheet"
+
+' --- Four Wide Curved Side Cutouts (Z = 0) ---
+
+With Polygon
+    .Reset
+    .Name "Poly_Slit_UR"
+    .Curve "Vivaldi_Curves"
+    .Point "25.000000", "40.000000"
+    .Point "24.173923", "40.059005"
+    .Point "23.561717", "40.205469"
+    .Point "23.010622", "40.426295"
+    .Point "22.495804", "40.715485"
+    .Point "22.006382", "41.069149"
+    .Point "21.536292", "41.484446"
+    .Point "21.081690", "41.959155"
+    .Point "20.639942", "42.491462"
+    .Point "20.209131", "43.079844"
+    .Point "19.787809", "43.722993"
+    .Point "19.374846", "44.419764"
+    .Point "18.969334", "45.169143"
+    .Point "18.570533", "45.970220"
+    .Point "18.177827", "46.822173"
+    .Point "17.790696", "47.724254"
+    .Point "17.408698", "48.675774"
+    .Point "17.031447", "49.676100"
+    .Point "16.658612", "50.724641"
+    .Point "16.289899", "51.820851"
+    .Point "15.925049", "52.964216"
+    .Point "15.563830", "54.154255"
+    .Point "15.206037", "55.390513"
+    .Point "14.851483", "56.672563"
+    .Point "14.500000", "58.000000"
+    .Point "14.500000", "62.500000"
+    .Point "14.851483", "61.172563"
+    .Point "15.206037", "59.890513"
+    .Point "15.563830", "58.654255"
+    .Point "15.925049", "57.464216"
+    .Point "16.289899", "56.320851"
+    .Point "16.658612", "55.224641"
+    .Point "17.031447", "54.176100"
+    .Point "17.408698", "53.175774"
+    .Point "17.790696", "52.224254"
+    .Point "18.177827", "51.322173"
+    .Point "18.570533", "50.470220"
+    .Point "18.969334", "49.669143"
+    .Point "19.374846", "48.919764"
+    .Point "19.787809", "48.222993"
+    .Point "20.209131", "47.579844"
+    .Point "20.639942", "46.991462"
+    .Point "21.081690", "46.459155"
+    .Point "21.536292", "45.984446"
+    .Point "22.006382", "45.569149"
+    .Point "22.495804", "45.215485"
+    .Point "23.010622", "44.926295"
+    .Point "23.561717", "44.705469"
+    .Point "24.173923", "44.559005"
+    .Point "25.000000", "44.500000"
+    .Point "25.000000", "40.000000"
+    .Create
+End With
+
+With CoverCurve
+    .Reset
+    .Name "Slit_UR"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Curve "Vivaldi_Curves:Poly_Slit_UR"
+    .Create
+End With
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:Slit_UR"
+
+With Polygon
+    .Reset
+    .Name "Poly_Slit_UL"
+    .Curve "Vivaldi_Curves"
+    .Point "-25.000000", "40.000000"
+    .Point "-24.173923", "40.059005"
+    .Point "-23.561717", "40.205469"
+    .Point "-23.010622", "40.426295"
+    .Point "-22.495804", "40.715485"
+    .Point "-22.006382", "41.069149"
+    .Point "-21.536292", "41.484446"
+    .Point "-21.081690", "41.959155"
+    .Point "-20.639942", "42.491462"
+    .Point "-20.209131", "43.079844"
+    .Point "-19.787809", "43.722993"
+    .Point "-19.374846", "44.419764"
+    .Point "-18.969334", "45.169143"
+    .Point "-18.570533", "45.970220"
+    .Point "-18.177827", "46.822173"
+    .Point "-17.790696", "47.724254"
+    .Point "-17.408698", "48.675774"
+    .Point "-17.031447", "49.676100"
+    .Point "-16.658612", "50.724641"
+    .Point "-16.289899", "51.820851"
+    .Point "-15.925049", "52.964216"
+    .Point "-15.563830", "54.154255"
+    .Point "-15.206037", "55.390513"
+    .Point "-14.851483", "56.672563"
+    .Point "-14.500000", "58.000000"
+    .Point "-14.500000", "62.500000"
+    .Point "-14.851483", "61.172563"
+    .Point "-15.206037", "59.890513"
+    .Point "-15.563830", "58.654255"
+    .Point "-15.925049", "57.464216"
+    .Point "-16.289899", "56.320851"
+    .Point "-16.658612", "55.224641"
+    .Point "-17.031447", "54.176100"
+    .Point "-17.408698", "53.175774"
+    .Point "-17.790696", "52.224254"
+    .Point "-18.177827", "51.322173"
+    .Point "-18.570533", "50.470220"
+    .Point "-18.969334", "49.669143"
+    .Point "-19.374846", "48.919764"
+    .Point "-19.787809", "48.222993"
+    .Point "-20.209131", "47.579844"
+    .Point "-20.639942", "46.991462"
+    .Point "-21.081690", "46.459155"
+    .Point "-21.536292", "45.984446"
+    .Point "-22.006382", "45.569149"
+    .Point "-22.495804", "45.215485"
+    .Point "-23.010622", "44.926295"
+    .Point "-23.561717", "44.705469"
+    .Point "-24.173923", "44.559005"
+    .Point "-25.000000", "44.500000"
+    .Point "-25.000000", "40.000000"
+    .Create
+End With
+
+With CoverCurve
+    .Reset
+    .Name "Slit_UL"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Curve "Vivaldi_Curves:Poly_Slit_UL"
+    .Create
+End With
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:Slit_UL"
+
+With Polygon
+    .Reset
+    .Name "Poly_Slit_LR"
+    .Curve "Vivaldi_Curves"
+    .Point "25.000000", "18.000000"
+    .Point "24.173923", "18.059005"
+    .Point "23.561717", "18.205469"
+    .Point "23.010622", "18.426295"
+    .Point "22.495804", "18.715485"
+    .Point "22.006382", "19.069149"
+    .Point "21.536292", "19.484446"
+    .Point "21.081690", "19.959155"
+    .Point "20.639942", "20.491462"
+    .Point "20.209131", "21.079844"
+    .Point "19.787809", "21.722993"
+    .Point "19.374846", "22.419764"
+    .Point "18.969334", "23.169143"
+    .Point "18.570533", "23.970220"
+    .Point "18.177827", "24.822173"
+    .Point "17.790696", "25.724254"
+    .Point "17.408698", "26.675774"
+    .Point "17.031447", "27.676100"
+    .Point "16.658612", "28.724641"
+    .Point "16.289899", "29.820851"
+    .Point "15.925049", "30.964216"
+    .Point "15.563830", "32.154255"
+    .Point "15.206037", "33.390513"
+    .Point "14.851483", "34.672563"
+    .Point "14.500000", "36.000000"
+    .Point "14.500000", "40.500000"
+    .Point "14.851483", "39.172563"
+    .Point "15.206037", "37.890513"
+    .Point "15.563830", "36.654255"
+    .Point "15.925049", "35.464216"
+    .Point "16.289899", "34.320851"
+    .Point "16.658612", "33.224641"
+    .Point "17.031447", "32.176100"
+    .Point "17.408698", "31.175774"
+    .Point "17.790696", "30.224254"
+    .Point "18.177827", "29.322173"
+    .Point "18.570533", "28.470220"
+    .Point "18.969334", "27.669143"
+    .Point "19.374846", "26.919764"
+    .Point "19.787809", "26.222993"
+    .Point "20.209131", "25.579844"
+    .Point "20.639942", "24.991462"
+    .Point "21.081690", "24.459155"
+    .Point "21.536292", "23.984446"
+    .Point "22.006382", "23.569149"
+    .Point "22.495804", "23.215485"
+    .Point "23.010622", "22.926295"
+    .Point "23.561717", "22.705469"
+    .Point "24.173923", "22.559005"
+    .Point "25.000000", "22.500000"
+    .Point "25.000000", "18.000000"
+    .Create
+End With
+
+With CoverCurve
+    .Reset
+    .Name "Slit_LR"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Curve "Vivaldi_Curves:Poly_Slit_LR"
+    .Create
+End With
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:Slit_LR"
+
+With Polygon
+    .Reset
+    .Name "Poly_Slit_LL"
+    .Curve "Vivaldi_Curves"
+    .Point "-25.000000", "18.000000"
+    .Point "-24.173923", "18.059005"
+    .Point "-23.561717", "18.205469"
+    .Point "-23.010622", "18.426295"
+    .Point "-22.495804", "18.715485"
+    .Point "-22.006382", "19.069149"
+    .Point "-21.536292", "19.484446"
+    .Point "-21.081690", "19.959155"
+    .Point "-20.639942", "20.491462"
+    .Point "-20.209131", "21.079844"
+    .Point "-19.787809", "21.722993"
+    .Point "-19.374846", "22.419764"
+    .Point "-18.969334", "23.169143"
+    .Point "-18.570533", "23.970220"
+    .Point "-18.177827", "24.822173"
+    .Point "-17.790696", "25.724254"
+    .Point "-17.408698", "26.675774"
+    .Point "-17.031447", "27.676100"
+    .Point "-16.658612", "28.724641"
+    .Point "-16.289899", "29.820851"
+    .Point "-15.925049", "30.964216"
+    .Point "-15.563830", "32.154255"
+    .Point "-15.206037", "33.390513"
+    .Point "-14.851483", "34.672563"
+    .Point "-14.500000", "36.000000"
+    .Point "-14.500000", "40.500000"
+    .Point "-14.851483", "39.172563"
+    .Point "-15.206037", "37.890513"
+    .Point "-15.563830", "36.654255"
+    .Point "-15.925049", "35.464216"
+    .Point "-16.289899", "34.320851"
+    .Point "-16.658612", "33.224641"
+    .Point "-17.031447", "32.176100"
+    .Point "-17.408698", "31.175774"
+    .Point "-17.790696", "30.224254"
+    .Point "-18.177827", "29.322173"
+    .Point "-18.570533", "28.470220"
+    .Point "-18.969334", "27.669143"
+    .Point "-19.374846", "26.919764"
+    .Point "-19.787809", "26.222993"
+    .Point "-20.209131", "25.579844"
+    .Point "-20.639942", "24.991462"
+    .Point "-21.081690", "24.459155"
+    .Point "-21.536292", "23.984446"
+    .Point "-22.006382", "23.569149"
+    .Point "-22.495804", "23.215485"
+    .Point "-23.010622", "22.926295"
+    .Point "-23.561717", "22.705469"
+    .Point "-24.173923", "22.559005"
+    .Point "-25.000000", "22.500000"
+    .Point "-25.000000", "18.000000"
+    .Create
+End With
+
+With CoverCurve
+    .Reset
+    .Name "Slit_LL"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Curve "Vivaldi_Curves:Poly_Slit_LL"
+    .Create
+End With
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:Slit_LL"
+
+' --- 2 High-Frequency Circular Slots on Center Slot (Z = 0) ---
+With Cylinder
+    .Reset
+    .Name "Circ1_Cutout"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .OuterRadius "1.8000"
+    .InnerRadius "0.0"
+    .Axis "z"
+    .Zrange "0.0", "0.0"
+    .Xcenter "0.0"
+    .Ycenter "55.0000"
+    .Segments "0"
+    .Create
+End With
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:Circ1_Cutout"
+
+With Cylinder
+    .Reset
+    .Name "Circ2_Cutout"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .OuterRadius "1.8000"
+    .InnerRadius "0.0"
+    .Axis "z"
+    .Zrange "0.0", "0.0"
+    .Xcenter "0.0"
+    .Ycenter "47.0000"
+    .Segments "0"
+    .Create
+End With
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:Circ2_Cutout"
+
+' --- Bottom Corner Notches (2.5 mm x 3.5 mm) ---
+With Brick
+    .Reset
+    .Name "Notch_L"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Xrange "-25.0000", "-22.5000"
+    .Yrange "0.0", "3.5"
+    .Zrange "0.0", "0.0"
+    .Create
+End With
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:Notch_L"
+
+With Brick
+    .Reset
+    .Name "Notch_R"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Xrange "22.5000", "25.0000"
+    .Yrange "0.0", "3.5"
+    .Zrange "0.0", "0.0"
+    .Create
+End With
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:Notch_R"
+
+' --- CPW Feed Isolation Slot Cutouts (Table 1: Mw = 4.0 mm, Ml = 18.09 mm) ---
+With Brick
+    .Reset
+    .Name "CPW_Gap_Out_V"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Xrange "-22.5000", "-22.0000"
+    .Yrange "79.5000", "98.0900"
+    .Zrange "0.0", "0.0"
+    .Create
+End With
+
+With Brick
+    .Reset
+    .Name "CPW_Gap_Out_H"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Xrange "-22.5000", "-0.6000"
+    .Yrange "79.5000", "80.0000"
+    .Zrange "0.0", "0.0"
+    .Create
+End With
+
+Solid.Add "Vivaldi:CPW_Gap_Out_V", "Vivaldi:CPW_Gap_Out_H"
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:CPW_Gap_Out_V"
+
+With Brick
+    .Reset
+    .Name "CPW_Gap_In_V"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Xrange "-18.0000", "-17.5000"
+    .Yrange "84.0000", "98.0900"
+    .Zrange "0.0", "0.0"
+    .Create
+End With
+
+With Brick
+    .Reset
+    .Name "CPW_Gap_In_H"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Xrange "-18.0000", "-0.6000"
+    .Yrange "84.0000", "84.5000"
+    .Zrange "0.0", "0.0"
+    .Create
+End With
+
+Solid.Add "Vivaldi:CPW_Gap_In_V", "Vivaldi:CPW_Gap_In_H"
+Solid.Subtract "Vivaldi:Radiator_Ground", "Vivaldi:CPW_Gap_In_V"
+
+' --- L-Shaped CPW Feed Line Solid (Crossing over slot to Right Wing) ---
+With Brick
+    .Reset
+    .Name "CPW_Feed_V"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Xrange "-22.0000", "-18.0000"
+    .Yrange "84.0000", "98.0900"
+    .Zrange "0.0", "0.0"
+    .Create
+End With
+
+With Brick
+    .Reset
+    .Name "CPW_Feed_H"
+    .Component "Vivaldi"
+    .Material "Copper (annealed)"
+    .Xrange "-22.0000", "3.1000"
+    .Yrange "80.0000", "84.0000"
+    .Zrange "0.0", "0.0"
+    .Create
+End With
+
+Solid.Add "Vivaldi:CPW_Feed_V", "Vivaldi:CPW_Feed_H"
+Solid.Add "Vivaldi:Radiator_Ground", "Vivaldi:CPW_Feed_V"
+
+' --- Surrounding Boundaries (Open Add Space) ---
+With Boundary
+    .Xmin "expanded open"
+    .Xmax "expanded open"
+    .Ymin "expanded open"
+    .Ymax "expanded open"
+    .Zmin "expanded open"
+    .Zmax "expanded open"
+End With
+
+' --- Waveguide Port on CPW Feed (Y = l_sub = 98.09 mm) ---
+With Port
+    .Reset
+    .PortNumber "1"
+    .Label "Feed_Port"
+    .NumberOfModes "1"
+    .AdjustPolarization "False"
+    .PolarizationAngle "0.0"
+    .ReferencePlaneDistance "0"
+    .Coordinates "Free"
+    .Orientation "Ymax"
+    .PortOnBound "False"
+    .Xrange "-23.5000", "-16.5000"
+    .Zrange "-1.0080", "0.5000"
+    .Yrange "98.0900", "98.0900"
+    .Create
+End With
+
+' --- Farfield Monitors (3, 5, 9, 13, 18 GHz) ---
+With Monitor
+    .Reset
+    .Name "Farfield (f=3 GHz)"
+    .Dimension "Volume"
+    .Domain "Frequency"
+    .FieldType "Farfield"
+    .Frequency "3.0"
+    .Create
+End With
+
+With Monitor
+    .Reset
+    .Name "Farfield (f=5 GHz)"
+    .Dimension "Volume"
+    .Domain "Frequency"
+    .FieldType "Farfield"
+    .Frequency "5.0"
+    .Create
+End With
+
+With Monitor
+    .Reset
+    .Name "Farfield (f=9 GHz)"
+    .Dimension "Volume"
+    .Domain "Frequency"
+    .FieldType "Farfield"
+    .Frequency "9.0"
+    .Create
+End With
+
+With Monitor
+    .Reset
+    .Name "Farfield (f=13 GHz)"
+    .Dimension "Volume"
+    .Domain "Frequency"
+    .FieldType "Farfield"
+    .Frequency "13.0"
+    .Create
+End With
+
+With Monitor
+    .Reset
+    .Name "Farfield (f=18 GHz)"
+    .Dimension "Volume"
+    .Domain "Frequency"
+    .FieldType "Farfield"
+    .Frequency "18.0"
+    .Create
+End With
