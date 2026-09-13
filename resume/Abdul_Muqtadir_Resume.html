@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdul Muqtadir - Resume</title>
+  <title>Abdul Muqtadir - Engineering Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Classic Professional Engineering Typography: Times / Latin Modern / Computer Modern serif & Inter sans fallback -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ==========================================================================
-       CLASSIC LATEX / OVERLEAF ENGINEERING RESUME TEMPLATE (JAKE'S / HARVARD STYLE)
-       Industry-standard, ATS-optimized, high-density format.
+       1-PAGE INDUSTRY ENGINEERING RESUME (JAKE'S / HARVARD FORMAT)
+       Concise, high-density, single-page corporate & defense format.
        ========================================================================== */
 
     * {
@@ -22,33 +21,30 @@
 
     @page {
       size: letter;
-      margin: 0.5in;
+      margin: 0.32in 0.45in;
     }
 
     body {
       font-family: 'EB Garamond', 'Times New Roman', Times, serif;
-      font-size: 10.5pt;
-      line-height: 1.35;
+      font-size: 9.3pt;
+      line-height: 1.25;
       color: #111111;
       background-color: #f4f6f8;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Screen Wrapper */
     .resume-wrapper {
       max-width: 8.5in;
-      min-height: 11in;
-      margin: 20px auto;
+      margin: 10px auto;
       background: #ffffff;
-      padding: 0.55in 0.6in;
+      padding: 0.34in 0.48in;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
-    /* Web action bar (hidden during print) */
     .screen-toolbar {
       max-width: 8.5in;
-      margin: 15px auto 0;
-      padding: 10px 16px;
+      margin: 12px auto 0;
+      padding: 8px 16px;
       background: #1e293b;
       color: #f8fafc;
       border-radius: 6px;
@@ -63,7 +59,7 @@
       background: #0284c7;
       color: #ffffff;
       border: none;
-      padding: 6px 14px;
+      padding: 5px 13px;
       border-radius: 4px;
       font-size: 12px;
       font-weight: 600;
@@ -78,28 +74,29 @@
       background: #0369a1;
     }
 
-    /* Header Section */
+    /* Header */
     .header {
       text-align: center;
-      margin-bottom: 14px;
+      margin-bottom: 6px;
     }
 
     .name {
-      font-size: 24pt;
+      font-size: 20pt;
       font-weight: 700;
       letter-spacing: 0.02em;
       text-transform: uppercase;
       color: #000000;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
+      line-height: 1;
     }
 
     .contact-line {
-      font-size: 10pt;
+      font-size: 9pt;
       color: #222222;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
 
     .contact-line a {
@@ -117,21 +114,20 @@
 
     /* Section Headings */
     .section-title {
-      font-size: 11pt;
+      font-size: 9.9pt;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       color: #000000;
-      border-bottom: 0.85pt solid #111111;
-      padding-bottom: 1.5px;
-      margin-top: 13px;
-      margin-bottom: 6px;
+      border-bottom: 0.8pt solid #111111;
+      padding-bottom: 1px;
+      margin-top: 6px;
+      margin-bottom: 3px;
     }
 
-    /* Sub-blocks */
+    /* Item Blocks */
     .item {
-      margin-bottom: 7px;
-      break-inside: avoid;
+      margin-bottom: 3.5px;
     }
 
     .item-header {
@@ -142,13 +138,13 @@
 
     .item-title {
       font-weight: 700;
-      font-size: 10.5pt;
+      font-size: 9.5pt;
       color: #000000;
     }
 
     .item-date {
       font-weight: 400;
-      font-size: 10pt;
+      font-size: 8.9pt;
       text-align: right;
       color: #222222;
     }
@@ -158,9 +154,9 @@
       justify-content: space-between;
       align-items: baseline;
       font-style: italic;
-      font-size: 10pt;
+      font-size: 9pt;
       color: #222222;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .item-location {
@@ -171,29 +167,28 @@
     /* Bullet Points */
     ul.bullets {
       list-style-type: disc;
-      margin-left: 18px;
-      margin-top: 2px;
+      margin-left: 15px;
+      margin-top: 1px;
     }
 
     ul.bullets li {
-      font-size: 10pt;
-      line-height: 1.35;
-      margin-bottom: 2.5px;
+      font-size: 9pt;
+      line-height: 1.23;
+      margin-bottom: 1px;
       text-align: justify;
     }
 
     /* Skills block */
     .skills-category {
-      margin-bottom: 3.5px;
-      font-size: 10pt;
-      line-height: 1.35;
+      margin-bottom: 1.5px;
+      font-size: 9pt;
+      line-height: 1.24;
     }
 
     .skills-label {
       font-weight: 700;
     }
 
-    /* Print Optimization */
     @media print {
       body {
         background: #ffffff;
@@ -220,13 +215,12 @@
 </head>
 <body>
 
-  <!-- Screen-Only Toolbar -->
   <div class="screen-toolbar">
     <div>
-      <strong>Abdul Muqtadir</strong> — Professional Engineering Resume (LaTeX Jake's Format)
+      <strong>Abdul Muqtadir</strong> — 1-Page Industry Engineering Resume
     </div>
     <div style="display: flex; gap: 8px;">
-      <a href="../index.html" class="toolbar-btn" style="background: #334155;">Back to Website</a>
+      <a href="Abdul_Muqtadir_CV.html" class="toolbar-btn" style="background: #334155;">View 2-Page Full CV</a>
       <button class="toolbar-btn" onclick="window.print();">Print to PDF</button>
     </div>
   </div>
@@ -240,8 +234,6 @@
         <span>(+92) 333 454 7518</span>
         <span class="separator">|</span>
         <a href="mailto:Muqtadir0711@gmail.com">Muqtadir0711@gmail.com</a>
-        <span class="separator">|</span>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
         <span class="separator">|</span>
         <a href="https://github.com/muqtadir2777" target="_blank">github.com/muqtadir2777</a>
         <span class="separator">|</span>
@@ -258,25 +250,24 @@
       <div class="item">
         <div class="item-header">
           <span class="item-title">National University of Sciences and Technology (NUST)</span>
-          <span class="item-date">Sep 2023 – Present</span>
+          <span class="item-date">Sep 2023 – Expected Jun 2027</span>
         </div>
         <div class="item-subtitle-row">
           <span>Bachelor of Engineering in Avionics Engineering; CGPA: 3.73 / 4.00 (Semester 7)</span>
           <span class="item-location">Risalpur, Pakistan</span>
         </div>
         <ul class="bullets">
-          <li><strong>Academic Honors:</strong> Maintained Dean's Honor List standing across 7 consecutive semesters.</li>
-          <li><strong>Relevant Coursework:</strong> RF &amp; Microwave Engineering, Antenna &amp; Wave Propagation, Digital Signal Processing (DSP), Control Systems, Embedded Systems, Microprocessors, Radar Systems, Electronic Warfare, Telemetry.</li>
+          <li><strong>Honors &amp; Coursework:</strong> Dean's Honor List across 7 consecutive semesters. Coursework in RF &amp; Microwave Design, Antenna &amp; Wave Propagation, Digital Signal Processing (DSP), Control Systems Engineering, and Microcontrollers.</li>
         </ul>
       </div>
 
-      <div class="item" style="margin-top: 4px;">
+      <div class="item" style="margin-top: 1px;">
         <div class="item-header">
           <span class="item-title">The Universal Millennium College</span>
           <span class="item-date">Aug 2021 – May 2023</span>
         </div>
         <div class="item-subtitle-row">
-          <span>Cambridge International A-Levels — Mathematics, Physics, Chemistry (3 A Grades)</span>
+          <span>Cambridge International A-Levels — Mathematics (A), Physics (A), Chemistry (A)</span>
           <span class="item-location">Pakistan</span>
         </div>
       </div>
@@ -286,25 +277,25 @@
     <section>
       <h2 class="section-title">Technical Skills</h2>
       <div class="skills-category">
-        <span class="skills-label">RF, Microwave &amp; Antennas:</span> CST Studio Suite 2025 (3D Full-Wave EM), Keysight ADS, Keysight LineCalc, S-Parameter Analysis (\(S_{11}, S_{21}\)), CPW &amp; Microstrip Design, Vivaldi Exponential Slot Antennas, Conformal Arrays.
+        <span class="skills-label">RF &amp; Antennas:</span> CST Studio Suite 2025 (3D Full-Wave EM), Keysight ADS, LineCalc, S-Parameters (S11, S21 return/insertion loss), CPW &amp; Microstrip matching, Super Wideband Vivaldi Antennas, Conformal Arrays.
       </div>
       <div class="skills-category">
         <span class="skills-label">Communications &amp; SDR:</span> ADALM-Pluto Software-Defined Radio, 915 MHz FM Telemetry, Quadrature Demodulation, Digital IIR/FIR Filter Design, Noise Suppression.
       </div>
       <div class="skills-category">
-        <span class="skills-label">Control Systems &amp; Dynamics:</span> Closed-Loop Digital PID Control, Linear Quadratic Regulator (LQR), State-Space Modeling, IMU 6-DOF Sensor Fusion (Kalman &amp; Complementary Filters), Lagrangian Dynamics.
+        <span class="skills-label">Controls &amp; Modeling:</span> Closed-Loop Digital PID Control, Linear Quadratic Regulator (LQR), State-Space Modeling, IMU 6-DOF Sensor Fusion (Kalman &amp; Complementary Filters), MATLAB / Simulink.
       </div>
       <div class="skills-category">
-        <span class="skills-label">Programming &amp; Software:</span> C/C++, Embedded C, Python (NumPy, SciPy, Pandas, Matplotlib), MATLAB / Simulink, G-Code, Linux/Bash, Git.
+        <span class="skills-label">Programming &amp; Firmware:</span> C, C++, Embedded C, Python (NumPy, SciPy, Pandas, Matplotlib), MATLAB, G-Code, Linux/Bash, Git.
       </div>
       <div class="skills-category">
-        <span class="skills-label">Hardware &amp; CAD Prototyping:</span> ESP32, STM32, Arduino Uno, MPU6050, BTS7960 43A Drivers, Stepper Motors, CATIA V5, AutoCAD, KiCAD, Proteus, Oscilloscope Diagnostics.
+        <span class="skills-label">Hardware &amp; Prototyping:</span> ESP32 Dual-Core, STM32, Arduino Uno, MPU6050 IMU, BTS7960 43A Motor Drivers, Stepper Motors, CATIA V5, AutoCAD, KiCAD, Oscilloscope Diagnostics.
       </div>
     </section>
 
     <!-- ENGINEERING PROJECTS -->
     <section>
-      <h2 class="section-title">Engineering Projects</h2>
+      <h2 class="section-title">Selected Engineering Projects</h2>
 
       <!-- Project 1 -->
       <div class="item">
@@ -313,13 +304,13 @@
           <span class="item-date">Aug 2026</span>
         </div>
         <div class="item-subtitle-row">
-          <span>Lead Designer | CST Studio Suite 2025, Rogers RT6035HTC, CPW Transition</span>
+          <span>CST Studio Suite 2025, Rogers RT6035HTC, CPW Transition</span>
           <span class="item-location">NUST CAE</span>
         </div>
         <ul class="bullets">
-          <li>Designed and numerically simulated an ultra-compact planar and conformal Vivaldi antenna achieving a 6:1 impedance bandwidth ratio (\(S_{11} < -10\text{ dB}\) from 3.0 to 18.0 GHz) for UAV Electronic Warfare (EW) direction-finding.</li>
-          <li>Synthesized a single-layer Co-Planar Waveguide (CPW) feed transition and formulated an analytical exponential taper profile (\(R = 0.16\text{ mm}^{-1}\)) with 4 curved ground slits to suppress destructive higher-order cross-polarization modes.</li>
-          <li>Modeled aerodynamic conformal cylindrical curvature matching UAV fuselage contours and evaluated mutual coupling isolation (\(S_{21} < -25\text{ dB}\)).</li>
+          <li>Designed and simulated an ultra-compact planar and conformal Vivaldi antenna achieving a 6:1 impedance bandwidth ratio with return loss S11 &lt; -10 dB across the entire 3.0 to 18.0 GHz band for airborne Electronic Warfare (EW).</li>
+          <li>Synthesized a single-layer Co-Planar Waveguide (CPW) transition and exponential flare (opening factor 0.16 mm⁻¹) with 4 curved ground slits to eliminate destructive higher-order cross-polarization modes.</li>
+          <li>Modeled aerodynamic conformal bending to match UAV fuselage curvature and validated inter-element mutual coupling isolation (S21 &lt; -25 dB).</li>
         </ul>
       </div>
 
@@ -330,13 +321,12 @@
           <span class="item-date">Jul 2026</span>
         </div>
         <div class="item-subtitle-row">
-          <span>Systems &amp; Comms Engineer | ADALM-Pluto SDR, Python, PID Autopilot, 915 MHz FM</span>
+          <span>ADALM-Pluto SDR, Python Dynamics Plant, Closed-Loop PID Autopilot</span>
           <span class="item-location">NUST CAE</span>
         </div>
         <ul class="bullets">
-          <li>Constructed a real-time HIL telemetry framework coupling a simulated 2nd-order aircraft dynamics plant with a closed-loop PID altitude autopilot.</li>
-          <li>Modulated continuous telemetry states onto a 915 MHz carrier using frequency modulation (FM) and streamed I/Q frames via an ADALM-Pluto SDR.</li>
-          <li>Implemented receiver DSP pipeline performing quadrature demodulation and single-pole IIR noise filtering to reconstruct the control feedback loop under simulated AWGN conditions.</li>
+          <li>Constructed a real-time HIL simulation coupling a simulated second-order UAV climb dynamics plant with a closed-loop digital PID autopilot.</li>
+          <li>Modulated continuous altitude telemetry over a physical 915 MHz RF link using an ADALM-Pluto SDR; built receiver DSP pipeline with quadrature demodulation and single-pole IIR noise filtering to reconstruct the control feedback loop under noise.</li>
         </ul>
       </div>
 
@@ -347,12 +337,12 @@
           <span class="item-date">Jun 2026</span>
         </div>
         <div class="item-subtitle-row">
-          <span>RF Designer | Keysight ADS, Keysight LineCalc, CST 3D EM, FR4 Microstrip</span>
+          <span>Keysight ADS, Keysight LineCalc, CST Microwave Studio, FR4 Microstrip</span>
           <span class="item-location">NUST CAE</span>
         </div>
         <ul class="bullets">
           <li>Synthesized a distributed stepped-impedance microstrip low-pass filter at a 2.4 GHz cutoff frequency for avionics ISM-band harmonic suppression.</li>
-          <li>Executed Monte Carlo statistical yield analysis to model substrate permittivity variations (\(\varepsilon_r = 4.4 \pm 0.1\)) and trace width tolerances; verified full 3D S-parameters in CST Studio Suite.</li>
+          <li>Conducted Monte Carlo statistical yield analysis to model PCB substrate tolerance variations (dielectric constant Er = 4.4 ± 0.1) and verified 3D electromagnetic S-parameters in CST.</li>
         </ul>
       </div>
 
@@ -363,42 +353,12 @@
           <span class="item-date">May 2026</span>
         </div>
         <div class="item-subtitle-row">
-          <span>Control Systems Engineer | MATLAB/Simulink, C++ Firmware, MPU6050 IMU</span>
+          <span>MATLAB/Simulink, Embedded C++, MPU6050 6-DOF IMU</span>
           <span class="item-location">NUST CAE</span>
         </div>
         <ul class="bullets">
           <li>Derived non-linear Lagrangian equations of motion and linearized state-space matrices around the unstable vertical equilibrium.</li>
-          <li>Demonstrated performance degradation of state-feedback LQR under unobserved linear cart states \((x, \dot{x})\); engineered and tuned a physical cascaded PID firmware with anti-windup clamping and complementary sensor filtering.</li>
-        </ul>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">CNC 2D Handwriting Machine &amp; Vector Plotter</span>
-          <span class="item-date">Dec 2025</span>
-        </div>
-        <div class="item-subtitle-row">
-          <span>Mechatronics Designer | Arduino Uno, GRBL v1.1, A4988, NEMA 14, CATIA V5</span>
-          <span class="item-location">Personal Project</span>
-        </div>
-        <ul class="bullets">
-          <li>Designed dual-axis mechanical gantry in CATIA V5 and calibrated GRBL firmware EEPROM to achieve 0.05 mm positional repeatability for vector G-code execution.</li>
-        </ul>
-      </div>
-
-      <!-- Project 6 -->
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">Autonomous Heavy Competition Rover</span>
-          <span class="item-date">Apr 2025</span>
-        </div>
-        <div class="item-subtitle-row">
-          <span>Hardware &amp; Power Engineer | ESP32 Dual-Core, Dual BTS7960 43A, 4S2P Li-Ion</span>
-          <span class="item-location">Robotics R&amp;D</span>
-        </div>
-        <ul class="bullets">
-          <li>Engineered heavy-duty powertrain utilizing dual BTS7960 43A H-bridges, JGA-25-370 geared motors, and custom 16.8V battery management with real-time wireless telemetry.</li>
+          <li>Demonstrated physical degradation of theoretical LQR under unobserved linear cart states; engineered and stabilized a physical prototype via cascaded PID firmware with anti-windup clamping and complementary sensor filtering.</li>
         </ul>
       </div>
     </section>
@@ -417,8 +377,8 @@
           <span class="item-location">Remote</span>
         </div>
         <ul class="bullets">
-          <li>Consulted on microcontroller firmware architecture, I2C/SPI sensor interfaces, and closed-loop control algorithms for international clients.</li>
-          <li>Performed schematic reviews, circuit debugging, and component selection for high-reliability embedded prototypes.</li>
+          <li>Consulted on microcontroller firmware architecture, I2C/SPI sensor interfaces, and closed-loop control algorithms for international engineering clients.</li>
+          <li>Conducted schematic reviews, circuit debugging, and component selection for high-reliability embedded hardware builds.</li>
         </ul>
       </div>
 
@@ -432,8 +392,7 @@
           <span class="item-location">Risalpur, Pakistan</span>
         </div>
         <ul class="bullets">
-          <li>Direct technical initiatives, SDR telemetry experiments, and robotics workshops across the department.</li>
-          <li>Organize technical bootcamps bridging analytical classroom physics with hands-on hardware laboratory implementation.</li>
+          <li>Lead technical student projects, SDR telemetry experiments, and autonomous robotics workshops for 40+ engineering students.</li>
         </ul>
       </div>
 
@@ -447,18 +406,9 @@
           <span class="item-location">Remote &amp; In-Person</span>
         </div>
         <ul class="bullets">
-          <li>Taught calculus, kinematics, wave mechanics, and electromagnetic theory to 20+ students, helping them achieve A/A* grades.</li>
+          <li>Mentored 20+ students in differential calculus, kinematics, wave mechanics, and electromagnetism, with students achieving top A/A* grades.</li>
         </ul>
       </div>
-    </section>
-
-    <!-- CERTIFICATIONS & HONORS -->
-    <section>
-      <h2 class="section-title">Honors &amp; Certifications</h2>
-      <ul class="bullets">
-        <li><strong>Dean's Honor List:</strong> Recognized for top academic excellence across 7 consecutive semesters at NUST CAE.</li>
-        <li><strong>IBM Professional Certification:</strong> Data Analysis with Python (NumPy, SciPy, Pandas, Scikit-Learn).</li>
-      </ul>
     </section>
 
   </main>
