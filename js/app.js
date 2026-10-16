@@ -249,11 +249,11 @@
     if (!el) return;
 
     const titles = [
-      'Avionics Engineering Undergrad @ NUST CAE (Sem 7)',
-      'RF & Antenna Engineer (CST Studio Suite & ADS)',
-      'Hardware-in-the-Loop (HIL) & SDR Telemetry Specialist',
-      'Digital Closed-Loop PID & LQR Control Engineer',
-      'Embedded Firmware & Robotics Architect'
+      'Control Systems, AI & Embedded Systems Undergrad @ NUST CAE',
+      'Digital Closed-Loop PID & LQR Control Specialist',
+      'Artificial Intelligence & Applied Machine Learning',
+      'Embedded Firmware & Robotics Architect',
+      'RF & Microwave Engineering (CST Studio Suite & ADS)'
     ];
 
     let titleIdx = 0;
@@ -314,7 +314,7 @@
           const exp = document.getElementById('countExp');
           const sem = document.getElementById('countSem');
 
-          if (cgpa) animateCount(cgpa, 3.73, 2, 1600);
+          if (cgpa) animateCount(cgpa, 3.74, 2, 1600);
           if (proj) animateCount(proj, 8, 0, 1200);
           if (exp) animateCount(exp, 3, 0, 1000);
           if (sem) animateCount(sem, 7, 0, 800);
@@ -709,12 +709,12 @@
         'VERSION:3.0',
         'FN:Abdul Muqtadir',
         'N:Muqtadir;Abdul;;;',
-        'TITLE:Avionics, RF & Embedded Systems Engineer',
+        'TITLE:Control Systems, AI & Embedded Systems Engineer',
         'ORG:National University of Sciences & Technology (NUST CAE)',
         'EMAIL;TYPE=INTERNET,HOME:Muqtadir0711@gmail.com',
         'TEL;TYPE=CELL:+923334547518',
         'ADR;TYPE=HOME:;;Gujranwala;Punjab;;Pakistan',
-        'NOTE:Avionics Engineering Undergrad (Sem 7, CGPA: 3.73/4.00) at NUST CAE. RF/Microwave (CST, ADS), SDR Telemetry, PID/LQR Controls, Embedded Systems.',
+        'NOTE:Avionics Engineering Undergrad (Sem 7, CGPA: 3.74/4.00) at NUST CAE. Control Systems, AI, Embedded Firmware, Robotics, and RF.',
         'URL:https://muqtadir2777.github.io',
         'END:VCARD'
       ].join('\r\n');

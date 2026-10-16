@@ -27,39 +27,39 @@
 
     whoami: () => `
 <div style="color: #fff; font-weight: 700;">Abdul Muqtadir</div>
-<div style="color: #38bdf8;">Avionics, RF &amp; Embedded Systems Engineer · Semester 7</div>
+<div style="color: #38bdf8;">Control Systems, AI &amp; Embedded Systems Engineer · Semester 7</div>
 <div style="color: #cbd5e1; margin-top: 0.3rem;">
   Undergraduate at <strong>NUST College of Aeronautical Engineering (CAE)</strong>.
-  <strong>CGPA: 3.73 / 4.00</strong> (Semester 7).
-  Specialist in RF/Microwave 3D EM modeling (CST Studio Suite, Keysight ADS),
-  SDR Telemetry (ADALM-Pluto), Closed-Loop Digital PID/LQR Control, and Embedded Firmware (C/C++).
+  <strong>CGPA: 3.74 / 4.00</strong> (Semester 7).
+  Specialist in Closed-Loop Digital Controls (PID, State-Space, LQR), Artificial Intelligence
+  &amp; Machine Learning, Embedded Firmware (C/C++), Autonomous Robotics, and RF Engineering.
 </div>
 `,
 
     skills: () => `
 <div style="color: #38bdf8; font-weight: 700;">TECHNICAL ARSENAL:</div>
-  <span style="color: #f59e0b;">▸ RF &amp; Antennas:</span>   CST Studio Suite 2025, Keysight ADS, LineCalc, S-Parameters (S11, S21), Vivaldi / Conformal Arrays
-  <span style="color: #f59e0b;">▸ Comms &amp; SDR:</span>     ADALM-Pluto SDR, 915 MHz FM Telemetry, Quadrature Demod, IIR Filters
   <span style="color: #f59e0b;">▸ Control Theory:</span>  Closed-Loop PID, State-Space, LQR, MATLAB/Simulink, IMU Sensor Fusion
-  <span style="color: #f59e0b;">▸ Languages:</span>       C/C++, Embedded C, Python (NumPy, SciPy, Pandas), MATLAB, G-Code
-  <span style="color: #f59e0b;">▸ Hardware:</span>        ESP32 Dual-Core, STM32, Arduino Uno, MPU6050, BTS7960 43A, A4988
-  <span style="color: #f59e0b;">▸ CAD &amp; PCB:</span>       CATIA V5 (3D CAD), AutoCAD, KiCAD / EasyEDA
+  <span style="color: #f59e0b;">▸ AI &amp; Programming:</span> Python (NumPy, SciPy, Pandas, Scikit-Learn), Machine Learning, C/C++, Embedded C, MATLAB
+  <span style="color: #f59e0b;">▸ Embedded &amp; Hardware:</span> ESP32 Dual-Core, STM32, Arduino Uno, MPU6050, BTS7960 43A, A4988, Steppers
+  <span style="color: #f59e0b;">▸ CAD &amp; Prototyping:</span> CATIA V5 (3D CAD), AutoCAD, KiCAD / EasyEDA, DSO Oscilloscopes
+  <span style="color: #f59e0b;">▸ Comms &amp; SDR:</span>     ADALM-Pluto SDR, 915 MHz FM Telemetry, Quadrature Demod, IIR Filters
+  <span style="color: #f59e0b;">▸ RF &amp; Antennas:</span>   CST Studio Suite 2025, Keysight ADS, S-Parameters (S11, S21), Vivaldi Antennas
 `,
 
     projects: () => `
 <div style="color: #38bdf8; font-weight: 700;">FEATURED ENGINEERING BUILDS:</div>
-  <span style="color: #10b981;">[1] SWB Vivaldi Antenna (3-18 GHz):</span> Conformal planar array for EW/UAV radar (CST Studio Suite)
+  <span style="color: #10b981;">[1] TWIP Inverted Pendulum:</span> LQR vs. Cascaded PID dynamical modeling & physical build
   <span style="color: #10b981;">[2] HIL UAV Altitude Telemetry:</span> ADALM-Pluto SDR + Python plant + 915 MHz FM autopilot link
-  <span style="color: #10b981;">[3] 2.4 GHz Chebyshev LPF:</span> 5th-order stepped-impedance microstrip filter (Keysight ADS & CST)
-  <span style="color: #10b981;">[4] TWIP Inverted Pendulum:</span> LQR vs. Cascaded PID dynamical modeling & physical build
-  <span style="color: #10b981;">[5] CNC 2D Handwriting Machine:</span> Arduino Uno + GRBL v1.1 + A4988 + NEMA 14
-  <span style="color: #10b981;">[6] Autonomous Heavy Rover:</span> ESP32 + BTS7960 43A + 4S2P Li-Ion + WiFi Telemetry
+  <span style="color: #10b981;">[3] Autonomous Heavy Rover:</span> ESP32 + BTS7960 43A + 4S2P Li-Ion + WiFi Telemetry
+  <span style="color: #10b981;">[4] CNC 2D Handwriting Machine:</span> Arduino Uno + GRBL v1.1 + A4988 + NEMA 14
+  <span style="color: #10b981;">[5] SWB Vivaldi Antenna (3-18 GHz):</span> Conformal planar array for EW/UAV radar (CST Studio Suite)
+  <span style="color: #10b981;">[6] 2.4 GHz Chebyshev LPF:</span> 5th-order stepped-impedance microstrip filter (Keysight ADS & CST)
 `,
 
     edu: () => `
 <div style="color: #38bdf8; font-weight: 700;">ACADEMIC RECORD:</div>
   <span style="color: #fff; font-weight: 600;">▸ B.Eng. Avionics Engineering</span> (2023 – 2027 · In Progress)
-    College of Aeronautical Engineering (CAE), NUST | <span style="color: #f59e0b; font-weight:700;">CGPA: 3.73 / 4.00 (Sem 7)</span>
+    College of Aeronautical Engineering (CAE), NUST | <span style="color: #f59e0b; font-weight:700;">CGPA: 3.74 / 4.00 (Sem 7) · Dean's Honor List (5 Semesters)</span>
   <span style="color: #fff; font-weight: 600;">▸ Cambridge A-Levels</span> (2021 – 2023)
     The Universal Millennium College | <span style="color: #f59e0b;">3 A Grades (STEM)</span>
   <span style="color: #fff; font-weight: 600;">▸ Cambridge O-Levels</span> (2008 – 2021)

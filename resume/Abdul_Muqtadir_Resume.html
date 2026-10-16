@@ -90,6 +90,13 @@
       line-height: 1;
     }
 
+    .title-sub {
+      font-size: 9.6pt;
+      font-style: italic;
+      color: #333333;
+      margin-bottom: 2px;
+    }
+
     .contact-line {
       font-size: 9pt;
       color: #222222;
@@ -230,6 +237,7 @@
     <!-- HEADER -->
     <header class="header">
       <h1 class="name">Abdul Muqtadir</h1>
+      <div class="title-sub">Control Systems · Artificial Intelligence &amp; Data · Embedded Systems &amp; Robotics</div>
       <div class="contact-line">
         <span>(+92) 333 454 7518</span>
         <span class="separator">|</span>
@@ -253,11 +261,11 @@
           <span class="item-date">Sep 2023 – Expected Jun 2027</span>
         </div>
         <div class="item-subtitle-row">
-          <span>Bachelor of Engineering in Avionics Engineering; CGPA: 3.73 / 4.00 (Semester 7)</span>
+          <span>Bachelor of Engineering in Avionics Engineering; CGPA: 3.74 / 4.00 (Semester 7)</span>
           <span class="item-location">Risalpur, Pakistan</span>
         </div>
         <ul class="bullets">
-          <li><strong>Honors &amp; Coursework:</strong> Dean's Honor List across 7 consecutive semesters. Coursework in RF &amp; Microwave Design, Antenna &amp; Wave Propagation, Digital Signal Processing (DSP), Control Systems Engineering, and Microcontrollers.</li>
+          <li><strong>Honors &amp; Coursework:</strong> Dean's Honor List (Awarded across 5 semesters). Coursework in Control Systems Engineering, Digital Signal Processing (DSP), Microcontrollers &amp; Embedded Systems, Artificial Intelligence Foundations, and Wave Propagation.</li>
         </ul>
       </div>
 
@@ -277,19 +285,19 @@
     <section>
       <h2 class="section-title">Technical Skills</h2>
       <div class="skills-category">
-        <span class="skills-label">RF &amp; Antennas:</span> CST Studio Suite 2025 (3D Full-Wave EM), Keysight ADS, LineCalc, S-Parameters (S11, S21 return/insertion loss), CPW &amp; Microstrip matching, Super Wideband Vivaldi Antennas, Conformal Arrays.
+        <span class="skills-label">Control Systems &amp; Dynamics:</span> Closed-Loop Digital PID Control, Linear Quadratic Regulator (LQR), State-Space Modeling, IMU 6-DOF Sensor Fusion (Kalman &amp; Complementary Filters), Dynamic System Identification, MATLAB / Simulink.
       </div>
       <div class="skills-category">
-        <span class="skills-label">Communications &amp; SDR:</span> ADALM-Pluto Software-Defined Radio, 915 MHz FM Telemetry, Quadrature Demodulation, Digital IIR/FIR Filter Design, Noise Suppression.
+        <span class="skills-label">AI, Data &amp; Programming:</span> Python (NumPy, SciPy, Pandas, Scikit-Learn, Matplotlib), Machine Learning / Predictive Modeling, Data Analysis, C, C++, Embedded C, MATLAB, G-Code, Linux/Bash, Git.
       </div>
       <div class="skills-category">
-        <span class="skills-label">Controls &amp; Modeling:</span> Closed-Loop Digital PID Control, Linear Quadratic Regulator (LQR), State-Space Modeling, IMU 6-DOF Sensor Fusion (Kalman &amp; Complementary Filters), MATLAB / Simulink.
+        <span class="skills-label">Embedded Systems &amp; Robotics:</span> ESP32 (Dual-Core 240MHz), STM32, Arduino Uno, MPU6050 6-DOF IMU, BTS7960 43A High-Current H-Bridges, A4988 Stepper Drivers, NEMA Motors, Sensor Interfacing (I2C/SPI/UART).
       </div>
       <div class="skills-category">
-        <span class="skills-label">Programming &amp; Firmware:</span> C, C++, Embedded C, Python (NumPy, SciPy, Pandas, Matplotlib), MATLAB, G-Code, Linux/Bash, Git.
+        <span class="skills-label">Hardware &amp; CAD Prototyping:</span> CATIA V5 (3D Solid Modeling &amp; Kinematics), AutoCAD, KiCAD/EasyEDA (PCB Layout), Digital Storage Oscilloscopes (DSOs), Soldering &amp; Debugging.
       </div>
       <div class="skills-category">
-        <span class="skills-label">Hardware &amp; Prototyping:</span> ESP32 Dual-Core, STM32, Arduino Uno, MPU6050 IMU, BTS7960 43A Motor Drivers, Stepper Motors, CATIA V5, AutoCAD, KiCAD, Oscilloscope Diagnostics.
+        <span class="skills-label">RF, Microwave &amp; Telemetry:</span> CST Studio Suite 2025 (3D EM), Keysight ADS, S-Parameters (S11, S21), Vivaldi Antennas, ADALM-Pluto SDR, 915 MHz FM Telemetry.
       </div>
     </section>
 
@@ -297,7 +305,54 @@
     <section>
       <h2 class="section-title">Selected Engineering Projects</h2>
 
-      <!-- Project 1 -->
+      <!-- Project 1: TWIP Inverted Pendulum -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Two-Wheeled Inverted Pendulum Robot: LQR vs. Cascaded PID</span>
+          <span class="item-date">May 2026</span>
+        </div>
+        <div class="item-subtitle-row">
+          <span>MATLAB/Simulink, Embedded C++, MPU6050 6-DOF IMU, Control Theory</span>
+          <span class="item-location">NUST CAE</span>
+        </div>
+        <ul class="bullets">
+          <li>Derived non-linear Lagrangian equations of motion and linearized state-space matrices around the unstable vertical equilibrium.</li>
+          <li>Demonstrated physical degradation of theoretical state-feedback LQR under unobserved linear cart states; engineered and stabilized a physical prototype via cascaded PID firmware with anti-windup clamping and complementary sensor filtering.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2: HIL UAV Altitude Control -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Hardware-in-the-Loop (HIL) UAV Altitude Control &amp; SDR Telemetry</span>
+          <span class="item-date">Jul 2026</span>
+        </div>
+        <div class="item-subtitle-row">
+          <span>Python Dynamics Plant, Closed-Loop PID Autopilot, ADALM-Pluto SDR</span>
+          <span class="item-location">NUST CAE</span>
+        </div>
+        <ul class="bullets">
+          <li>Constructed a real-time HIL simulation coupling a simulated second-order UAV climb dynamics plant with a closed-loop digital PID autopilot.</li>
+          <li>Modulated continuous altitude telemetry over a physical 915 MHz RF link using an ADALM-Pluto SDR; built receiver DSP pipeline with quadrature demodulation and single-pole IIR noise filtering to reconstruct the control feedback loop under noise.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3: Autonomous Competition Rover -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Autonomous Heavy Competition Rover</span>
+          <span class="item-date">Apr 2025</span>
+        </div>
+        <div class="item-subtitle-row">
+          <span>ESP32 Dual-Core, Dual BTS7960 43A H-Bridges, 4S2P Li-Ion Battery Pack</span>
+          <span class="item-location">Robotics R&amp;D</span>
+        </div>
+        <ul class="bullets">
+          <li>Engineered heavy-duty robotic drivetrain utilizing dual BTS7960 43A H-bridges, high-torque JGA-25-370 geared motors, and custom 16.8V Li-Ion battery pack with real-time wireless telemetry.</li>
+        </ul>
+      </div>
+
+      <!-- Project 4: Vivaldi Antenna -->
       <div class="item">
         <div class="item-header">
           <span class="item-title">Super Wideband (3–18 GHz) Conformal Vivaldi Antenna</span>
@@ -308,57 +363,7 @@
           <span class="item-location">NUST CAE</span>
         </div>
         <ul class="bullets">
-          <li>Designed and simulated an ultra-compact planar and conformal Vivaldi antenna achieving a 6:1 impedance bandwidth ratio with return loss S11 &lt; -10 dB across the entire 3.0 to 18.0 GHz band for airborne Electronic Warfare (EW).</li>
-          <li>Synthesized a single-layer Co-Planar Waveguide (CPW) transition and exponential flare (opening factor 0.16 mm⁻¹) with 4 curved ground slits to eliminate destructive higher-order cross-polarization modes.</li>
-          <li>Modeled aerodynamic conformal bending to match UAV fuselage curvature and validated inter-element mutual coupling isolation (S21 &lt; -25 dB).</li>
-        </ul>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">Hardware-in-the-Loop (HIL) UAV Altitude Control &amp; SDR Telemetry</span>
-          <span class="item-date">Jul 2026</span>
-        </div>
-        <div class="item-subtitle-row">
-          <span>ADALM-Pluto SDR, Python Dynamics Plant, Closed-Loop PID Autopilot</span>
-          <span class="item-location">NUST CAE</span>
-        </div>
-        <ul class="bullets">
-          <li>Constructed a real-time HIL simulation coupling a simulated second-order UAV climb dynamics plant with a closed-loop digital PID autopilot.</li>
-          <li>Modulated continuous altitude telemetry over a physical 915 MHz RF link using an ADALM-Pluto SDR; built receiver DSP pipeline with quadrature demodulation and single-pole IIR noise filtering to reconstruct the control feedback loop under noise.</li>
-        </ul>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">2.4 GHz 5th-Order Chebyshev Stepped-Impedance Low-Pass Filter</span>
-          <span class="item-date">Jun 2026</span>
-        </div>
-        <div class="item-subtitle-row">
-          <span>Keysight ADS, Keysight LineCalc, CST Microwave Studio, FR4 Microstrip</span>
-          <span class="item-location">NUST CAE</span>
-        </div>
-        <ul class="bullets">
-          <li>Synthesized a distributed stepped-impedance microstrip low-pass filter at a 2.4 GHz cutoff frequency for avionics ISM-band harmonic suppression.</li>
-          <li>Conducted Monte Carlo statistical yield analysis to model PCB substrate tolerance variations (dielectric constant Er = 4.4 ± 0.1) and verified 3D electromagnetic S-parameters in CST.</li>
-        </ul>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">Two-Wheeled Inverted Pendulum Robot: LQR vs. Cascaded PID</span>
-          <span class="item-date">May 2026</span>
-        </div>
-        <div class="item-subtitle-row">
-          <span>MATLAB/Simulink, Embedded C++, MPU6050 6-DOF IMU</span>
-          <span class="item-location">NUST CAE</span>
-        </div>
-        <ul class="bullets">
-          <li>Derived non-linear Lagrangian equations of motion and linearized state-space matrices around the unstable vertical equilibrium.</li>
-          <li>Demonstrated physical degradation of theoretical LQR under unobserved linear cart states; engineered and stabilized a physical prototype via cascaded PID firmware with anti-windup clamping and complementary sensor filtering.</li>
+          <li>Designed and simulated an ultra-compact planar and conformal Vivaldi antenna achieving a 6:1 bandwidth ratio with return loss S11 &lt; -10 dB across 3.0 to 18.0 GHz; modeled aerodynamic conformal cylindrical bending matching UAV fuselage contours (isolation S21 &lt; -25 dB).</li>
         </ul>
       </div>
     </section>
@@ -373,7 +378,7 @@
           <span class="item-date">Jul 2025 – Present</span>
         </div>
         <div class="item-subtitle-row">
-          <span>Independent Contractor — Embedded Systems, Firmware &amp; RF</span>
+          <span>Independent Contractor — Embedded Systems, Controls &amp; Firmware</span>
           <span class="item-location">Remote</span>
         </div>
         <ul class="bullets">
@@ -392,7 +397,7 @@
           <span class="item-location">Risalpur, Pakistan</span>
         </div>
         <ul class="bullets">
-          <li>Lead technical student projects, SDR telemetry experiments, and autonomous robotics workshops for 40+ engineering students.</li>
+          <li>Lead technical student projects, autonomous robotics workshops, and sensor telemetry testbeds for 40+ engineering students.</li>
         </ul>
       </div>
 
